@@ -3,3 +3,17 @@
 [2024-09-05 10:44:29.273075] INFO: 测试模块: 欢迎来到方总的数据工厂~
 [2024-09-05 10:44:32.860840] INFO: 测试模块: 欢迎来到方总的数据工厂~
 [2024-09-05 10:44:34.929189] INFO: 测试模块: 欢迎来到方总的数据工厂~
+[2024-09-05 11:27:31.509778] ERROR: UserDao: 用户注册失败: (pymysql.err.ProgrammingError) (1146, "Table 'fun.data_factory_user' doesn't exist")
+[SQL: SELECT data_factory_user.id AS data_factory_user_id, data_factory_user.username AS data_factory_user_username, data_factory_user.name AS data_factory_user_name, data_factory_user.password AS data_factory_user_password, data_factory_user.email AS data_factory_user_email, data_factory_user.`role` AS data_factory_user_role, data_factory_user.last_login_time AS data_factory_user_last_login_time, data_factory_user.is_valid AS data_factory_user_is_valid, data_factory_user.create_time AS data_factory_user_create_time, data_factory_user.update_code AS data_factory_user_update_code, data_factory_user.update_name AS data_factory_user_update_name, data_factory_user.update_time AS data_factory_user_update_time 
+FROM data_factory_user 
+WHERE data_factory_user.username = %(username_1)s OR data_factory_user.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'zhan', 'email_1': 'zhan@163.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-09-05 11:27:54.630991] ERROR: UserDao: 用户注册失败: (pymysql.err.ProgrammingError) (1146, "Table 'fun.data_factory_user' doesn't exist")
+[SQL: SELECT data_factory_user.id AS data_factory_user_id, data_factory_user.username AS data_factory_user_username, data_factory_user.name AS data_factory_user_name, data_factory_user.password AS data_factory_user_password, data_factory_user.email AS data_factory_user_email, data_factory_user.`role` AS data_factory_user_role, data_factory_user.last_login_time AS data_factory_user_last_login_time, data_factory_user.is_valid AS data_factory_user_is_valid, data_factory_user.create_time AS data_factory_user_create_time, data_factory_user.update_code AS data_factory_user_update_code, data_factory_user.update_name AS data_factory_user_update_name, data_factory_user.update_time AS data_factory_user_update_time 
+FROM data_factory_user 
+WHERE data_factory_user.username = %(username_1)s OR data_factory_user.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'zhan', 'email_1': 'zhan@163.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
