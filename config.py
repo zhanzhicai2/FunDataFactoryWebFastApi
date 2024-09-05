@@ -16,6 +16,7 @@ class Config(object):
     # 数据库配置
     SQLALCHEMY_DATABASE_URI: str = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
     KEY = "funDataFactory"
+    EXPIRED_HOUR = 12
 
 
 class Text(object):
@@ -52,3 +53,5 @@ HTTP_CODE_MSG = {
     500: '服务器内部错误',
     302: '请求方法不支持'
 }
+
+
