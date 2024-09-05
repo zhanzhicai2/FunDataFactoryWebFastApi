@@ -17,3 +17,283 @@ WHERE data_factory_user.username = %(username_1)s OR data_factory_user.email = %
  LIMIT %(param_1)s]
 [parameters: {'username_1': 'zhan', 'email_1': 'zhan@163.com', 'param_1': 1}]
 (Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-09-05 18:09:28.396543] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-05 18:31:27.008960] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-05 23:58:54.232286] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-06 00:53:01.625841] ERROR: FunDataFactory: 数据工厂捕获到系统错误, 请求路径:/api/user/register
+请求参数: {"username": "神谕", "password": "123456", "name": "战斗", "email": "12163.com"}
+错误信息: Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 78, in errors_handling
+    await set_body(request, await request.body())
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 17, in set_body
+    async def receive() -> Message:
+NameError: name 'Message' is not defined
+
+[2024-09-06 00:54:01.580801] ERROR: FunDataFactory: 数据工厂捕获到系统错误, 请求路径:/api/user/register
+请求参数: {"username": "神谕", "password": "123456", "name": "战斗", "email": "12163.com"}
+错误信息: Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 105, in receive
+    return self.receive_nowait()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 100, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 118, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 157, in call_next
+    message = await recv_stream.receive()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 120, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 80, in errors_handling
+    return await call_next(request)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 163, in call_next
+    raise app_exc
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 73, in wrapped_app
+    response = await handler(conn, exc)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 44, in validation_exception_handler
+    return JSONResponse(content=res.dict)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 178, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 41, in __init__
+    self.body = self.render(content)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 181, in render
+    return json.dumps(
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+
+[2024-09-06 00:55:26.505442] ERROR: FunDataFactory: 数据工厂捕获到系统错误, 请求路径:/api/user/register
+请求参数: {"username": "神谕", "password": "123456", "name": "战斗", "email": "12163.com"}
+错误信息: Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 105, in receive
+    return self.receive_nowait()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 100, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 118, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 157, in call_next
+    message = await recv_stream.receive()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/anyio/streams/memory.py", line 120, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 80, in errors_handling
+    return await call_next(request)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 163, in call_next
+    raise app_exc
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/base.py", line 149, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/_exception_handler.py", line 73, in wrapped_app
+    response = await handler(conn, exc)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/__init__.py", line 44, in validation_exception_handler
+    return JSONResponse(content=res.dict)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 178, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 41, in __init__
+    self.body = self.render(content)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/starlette/responses.py", line 181, in render
+    return json.dumps(
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type method is not JSON serializable
+
+[2024-09-06 00:58:26.841407] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-06 00:58:26.842500] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "神谕", "password": "123456", "name": "战斗", "email": "12@163.com"}
+[2024-09-06 01:08:20.458125] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'data_factory_user.create_time' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 24, in register_user
+    users = session.query(DataFactoryUser).filter(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2762, in first
+    return self.limit(1)._iter().first()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result = self.session.execute(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1583, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1452, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1995, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1054, "Unknown column 'data_factory_user.create_time' in 'field list'")
+[SQL: SELECT data_factory_user.id AS data_factory_user_id, data_factory_user.username AS data_factory_user_username, data_factory_user.name AS data_factory_user_name, data_factory_user.password AS data_factory_user_password, data_factory_user.email AS data_factory_user_email, data_factory_user.`role` AS data_factory_user_role, data_factory_user.last_login_time AS data_factory_user_last_login_time, data_factory_user.is_valid AS data_factory_user_is_valid, data_factory_user.create_time AS data_factory_user_create_time, data_factory_user.update_code AS data_factory_user_update_code, data_factory_user.update_name AS data_factory_user_update_name, data_factory_user.update_time AS data_factory_user_update_time 
+FROM data_factory_user 
+WHERE data_factory_user.username = %(username_1)s OR data_factory_user.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'ee', 'email_1': 'ee@example.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+
+[2024-09-06 01:08:20.459438] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "ee", "password": "ee", "name": "ee", "email": "ee@example.com"}
+[2024-09-06 01:09:17.019537] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-06 01:09:17.021362] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "ee", "password": "ee", "name": "ee", "email": "ee@example.com"}
+[2024-09-06 01:09:32.465579] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-06 01:09:32.466414] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "ee", "password": "ee", "name": "ee", "email": "ee@163.com"}
+[2024-09-06 01:09:34.864213] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 27, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-06 01:09:34.865255] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "ee", "password": "ee", "name": "ee", "email": "ee@163.com"}

@@ -15,6 +15,7 @@ class Config(object):
 
     # 数据库配置
     SQLALCHEMY_DATABASE_URI: str = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
+    KEY = "funDataFactory"
 
 
 class Text(object):
@@ -27,6 +28,10 @@ class Text(object):
 class FilePath(object):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 后端服务项目目录
 
+    APP_PATH = os.path.join(BASE_DIR, "app")  # app 路径
+
+    CURD_PATH = os.path.join(APP_PATH, "curd")  # dao路径
+
     LOG_FILE_PATH = os.path.join(BASE_DIR, "logs")  # 日志文件路径
     if not os.path.isdir(LOG_FILE_PATH): os.mkdir(LOG_FILE_PATH)
 
@@ -37,3 +42,13 @@ class Permission(object):
     MEMBERS = 0  # 普通用户
     LEADER = 1  # 组长
     ADMIN = 2  # 超管
+
+
+HTTP_CODE_MSG = {
+
+    404: '请求路径找不到',
+    405: '请求方法不支持',
+    408: '请求超时',
+    500: '服务器内部错误',
+    302: '请求方法不支持'
+}
