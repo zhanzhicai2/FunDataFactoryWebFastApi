@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from app.models import Session
-from sqlalchemy import or_, func
+from sqlalchemy import or_, func, asc
 from app.models.user import DataFactoryUser
 from app.routers.user.user_schema import LoginUserBody
 from app.utils.logger import Log
@@ -57,3 +57,17 @@ class UserDao(object):
             # 进行对象刷新，更新对象，让对象过期，从而在下次访问时重新加载
             session.refresh(user)
             return user
+
+    @classmethod
+    @record_log
+    def get_user_infos(cls, page: int = 1, limit: int = 10, search: str = None) -> (int, DataFactoryUser):
+        """获取用户信息列表"""
+        with Session() as session:
+            filter_list = []
+            data = session.query(DataFactoryUser)
+            if search:
+                filter_list.append(DataFactoryUser.username.like(f"%{search}%"))
+            user_infos = data.order_by(asc(DataFactoryUser.id)).filter(*filter_list)
+            total = user_infos.count()
+            return total, user_infos.limit(limit).offset((page - 1) * limit).all()
+

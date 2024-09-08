@@ -368,3 +368,58 @@ Exception: 用户名或密码错误
 请求参数: {"username": "11", "password": "11"}
 [2024-09-06 06:59:36.252814] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
 请求参数: {"username": "11", "password": "11"}
+[2024-09-07 12:57:58.469587] ERROR: UserDao: user_login失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 51, in user_login
+    raise Exception("用户名或密码错误")
+Exception: 用户名或密码错误
+
+[2024-09-07 12:57:58.473616] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-07 12:58:04.054740] ERROR: UserDao: user_login失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 51, in user_login
+    raise Exception("用户名或密码错误")
+Exception: 用户名或密码错误
+
+[2024-09-07 12:58:04.055665] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-07 12:58:33.099801] ERROR: UserDao: user_login失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 51, in user_login
+    raise Exception("用户名或密码错误")
+Exception: 用户名或密码错误
+
+[2024-09-07 12:58:33.101386] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-08 07:45:22.582897] ERROR: UserDao: register_user失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 30, in register_user
+    raise Exception('用户名或邮箱号重复')
+Exception: 用户名或邮箱号重复
+
+[2024-09-08 07:45:22.589732] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+
+[2024-09-08 08:24:48.264588] ERROR: UserDao: user_login失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 51, in user_login
+    raise Exception("用户名或密码错误")
+Exception: 用户名或密码错误
+
+[2024-09-08 08:24:48.266656] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-08 13:01:50.028359] ERROR: UserDao: get_user_infos失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 19, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/user/UserDao.py", line 70, in get_user_infos
+    user_infos = data.order_by(asc(DataFactoryUser.id)).filter(*filter_list)
+NameError: name 'asc' is not defined
+
+[2024-09-08 13:01:50.030064] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/list
+路径参数: page=1&limit=10
+

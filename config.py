@@ -45,7 +45,7 @@ class Permission(object):
     ADMIN = 2  # 超管
 
 
-HTTP_CODE_MSG = {
+HTTP_MSG_MAP = {
 
     404: '请求路径找不到',
     405: '请求方法不支持',

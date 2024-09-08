@@ -25,3 +25,15 @@ def record_log(func):
             raise Exception(str(e))
 
     return wrapper
+
+
+# 用户登录态
+class AuthException(HTTPException):
+    def __init__(self, detail: Any = None) -> None:
+        super().__init__(status_code=200, detail=detail)
+
+
+# 用户权限
+class PermissionException(HTTPException):
+    def __init__(self, detail: Any = None) -> None:
+        super().__init__(status_code=200, detail=detail)

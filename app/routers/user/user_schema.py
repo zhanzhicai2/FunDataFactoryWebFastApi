@@ -3,7 +3,8 @@ from datetime import datetime
 from pydantic import BaseModel, validator, Field, EmailStr
 from config import Config
 import hashlib
-from app.models.base import ToolsSchemas, ResponseDto
+from app.models.base import ToolsSchemas, ResponseDto, ListDto
+from typing import List
 
 
 class RegisterUserBody(BaseModel):
@@ -39,11 +40,13 @@ class LoginUserBody(BaseModel):
 
 
 class UserDto(BaseModel):
+    id: int
     username: str
     name: str
     email: str
     role: int
     is_valid: bool
+    create_time: datetime
     last_login_time: datetime
 
     class Config:
@@ -61,3 +64,16 @@ class UserTokenDto(UserDto):
 class LoginResDto(ResponseDto):
     msg: str = '登录成功'
     data: UserTokenDto
+
+
+class UserList(ListDto):
+    lists: List[UserDto]
+
+
+class UserListResDto(ResponseDto):
+    data: UserList
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
+        }

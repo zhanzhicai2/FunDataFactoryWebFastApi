@@ -1,9 +1,9 @@
 import json
 
-from fastapi import APIRouter
-from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto
+from fastapi import APIRouter, Depends
+from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto, UserListResDto
 from app.curd.user.UserDao import UserDao
-from app.utils.auth_utils import UserToken
+from app.utils.auth_utils import UserToken, Auth
 from app.utils.exception_utils import NormalException
 from app.models.base import ResponseDto
 
@@ -29,8 +29,18 @@ def login(data: LoginUserBody):
         # xx.dict() 返回模型的字段和值的字典
         # 返回表示 dict() 的 JSON 字符串，只有当转换为json，模型里面的编码规则(json_encoders)才生效
         user_data = user_model.json()
+        print(user_data)
         token = UserToken.get_token(json.loads(user_data))
         setattr(user, 'token', token)
         return LoginResDto(data=user)
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.get("/list", name='用户列表', response_model=UserListResDto)
+def info_list(page: int = 1, limit: int = 10, search: str = None, _: dict = Depends(Auth())):
+    try:
+        total, user_infos = UserDao.get_user_infos(page, limit, search)
+        return UserListResDto(data=dict(total=total, lists=user_infos))
     except Exception as e:
         raise NormalException(str(e))

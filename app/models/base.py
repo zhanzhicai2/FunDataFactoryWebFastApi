@@ -18,3 +18,8 @@ class ToolsSchemas(object):
             if not v:
                 raise ValueError("不能为空")
         return v
+
+
+class ListDto(BaseModel):
+    total: int = 0
+    lists: list = []

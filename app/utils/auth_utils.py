@@ -4,9 +4,12 @@
 # @Desc : 
 # @Date  :  2024/09/06
 import jwt
+from fastapi import Header
 from jwt.exceptions import ExpiredSignatureError
 from datetime import timedelta, datetime
-from config import Config
+
+from app.utils.exception_utils import AuthException, PermissionException
+from config import Config, Permission
 
 
 class UserToken(object):
@@ -32,3 +35,20 @@ class UserToken(object):
         # 解析失败
         except Exception:
             raise Exception("token解析失败, 请重新登录")
+
+
+class Auth(object):
+
+    def __init__(self, role: int = Permission.MEMBERS):
+        self.role = role
+
+    def __call__(self, token: str = Header(..., description="登录的token")):
+        if not token:
+            raise AuthException("token不能为空")
+        try:
+            user_info = UserToken.parse_token(token)
+        except Exception as e:
+            raise AuthException(str(e))
+        if user_info.get('role', 0) < self.role:
+            raise PermissionException('权限不足, 请联系管理员')
+        return user_info

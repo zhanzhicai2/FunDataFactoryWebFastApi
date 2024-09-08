@@ -1,16 +1,24 @@
 import json
 from fastapi import FastAPI, Request
-from config import Text, HTTP_CODE_MSG
+from config import Text, HTTP_MSG_MAP
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.types import Message
 from fastapi.exceptions import RequestValidationError
 from app.models.base import ResponseDto
 from fastapi.responses import JSONResponse
-from app.utils.exception_utils import NormalException
+from app.utils.exception_utils import NormalException, PermissionException, AuthException
 from app.utils.logger import Log
 from app.routers import routers
+from starlette.middleware.cors import CORSMiddleware
 
 fun = FastAPI(title=Text.TITLE, version=Text.VERSION, description=Text.DESCRIPTION)
+fun.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
 
 for item in routers.data:
     fun.include_router(item[0], prefix=item[1], tags=item[2])
@@ -32,7 +40,7 @@ async def get_body(request: Request) -> bytes:
 # 自定义http异常处理器
 @fun.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):
-    res = ResponseDto(code=201, msg=HTTP_CODE_MSG.get(exc.status_code, exc.detail))
+    res = ResponseDto(code=201, msg=HTTP_MSG_MAP.get(exc.status_code, exc.detail))
     return JSONResponse(content=res.dict())
 
 
@@ -86,3 +94,17 @@ async def errors_handling(request: Request, call_next):
         Log().error(log_msg)
         res = ResponseDto(code=500, msg=str(exc.args[0]))
         return JSONResponse(content=res.dict())
+
+
+# 自定义权限异常
+@fun.exception_handler(PermissionException)
+async def unexpected_exception_error(request: Request, exc: PermissionException):
+    res = ResponseDto(code=403, msg=HTTP_MSG_MAP.get(exc.status_code, exc.detail))
+    return JSONResponse(content=res.dict())
+
+
+# 自定义用户登录态异常
+@fun.exception_handler(AuthException)
+async def unexpected_exception_error(request: Request, exc: AuthException):
+    res = ResponseDto(code=401, msg=HTTP_MSG_MAP.get(exc.status_code, exc.detail))
+    return JSONResponse(content=res.dict())
