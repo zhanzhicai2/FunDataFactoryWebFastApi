@@ -3,10 +3,11 @@ from datetime import datetime
 from app.models import Session
 from sqlalchemy import or_, func, asc
 from app.models.user import DataFactoryUser
-from app.routers.user.user_schema import LoginUserBody
+from app.routers.user.user_schema import LoginUserBody, UpdateUserBody
 from app.utils.logger import Log
 from config import Permission
 from app.utils.exception_utils import record_log
+from app.utils.db_utils import DbUtils
 
 
 class UserDao(object):
@@ -71,3 +72,25 @@ class UserDao(object):
             total = user_infos.count()
             return total, user_infos.limit(limit).offset((page - 1) * limit).all()
 
+    @classmethod
+    @record_log
+    def update_user(cls, data: UpdateUserBody, user_data: dict) -> None:
+        """
+        :param user_data: 用户数据
+        :param data: 更新的数据
+        :return:
+        """
+        with Session() as session:
+            user = session.query(DataFactoryUser).filter(DataFactoryUser.id == data.id).first()
+            if user is None:
+                raise Exception("用户不存在")
+            # not_null=True 只有非空字段才更新数据
+            # if data.role:
+            #     user.role = data.role
+            # if data.is_valid:
+            #     user.is_valid = data.is_valid
+            # user.updata_code = user_data['id']
+            # user.updata_code = user_data['username']
+            # session.commit()
+            DbUtils.update_model(user, data.dict(), user_data)
+            session.commit()

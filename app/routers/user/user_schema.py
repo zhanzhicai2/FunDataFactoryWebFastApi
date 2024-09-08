@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from pydantic import BaseModel, validator, Field, EmailStr
-from config import Config
+from config import Config, Permission
 import hashlib
 from app.models.base import ToolsSchemas, ResponseDto, ListDto
 from typing import List
@@ -77,3 +77,19 @@ class UserListResDto(ResponseDto):
         json_encoders = {
             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
         }
+
+
+class UpdateUserBody(BaseModel):
+    id: int = Field(..., title="用户ID", description="必传")
+    role: int = Field(None, title="用户权限", description="非必传")
+    is_valid: bool = Field(None, title="是否冻结", description="非必传")
+
+    @validator('id', 'role', 'is_valid')
+    def check_field(cls, v):
+        return ToolsSchemas.not_empty(v)
+
+    @validator('role')
+    def check_role_map(cls, value):
+        if value not in vars(Permission).values():
+            raise ValueError('角色类型有误')
+        return value

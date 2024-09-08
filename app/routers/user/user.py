@@ -1,11 +1,13 @@
 import json
 
 from fastapi import APIRouter, Depends
-from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto, UserListResDto
+from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto, UserListResDto, \
+    UpdateUserBody
 from app.curd.user.UserDao import UserDao
 from app.utils.auth_utils import UserToken, Auth
 from app.utils.exception_utils import NormalException
 from app.models.base import ResponseDto
+from config import Permission
 
 router = APIRouter()
 
@@ -42,5 +44,14 @@ def info_list(page: int = 1, limit: int = 10, search: str = None, _: dict = Depe
     try:
         total, user_infos = UserDao.get_user_infos(page, limit, search)
         return UserListResDto(data=dict(total=total, lists=user_infos))
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.post("/update", name="更新用户", response_model=ResponseDto)
+def banch_role(data: UpdateUserBody, user=Depends(Auth(Permission.ADMIN))):
+    try:
+        UserDao.update_user(data, user)
+        return ResponseDto(msg="修改成功")
     except Exception as e:
         raise NormalException(str(e))
