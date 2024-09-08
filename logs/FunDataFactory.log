@@ -423,3 +423,46 @@ NameError: name 'asc' is not defined
 [2024-09-08 13:01:50.030064] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/list
 路径参数: page=1&limit=10
 
+[2024-09-08 22:47:00.580202] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/list
+路径参数: page=1&limit=20
+
+[2024-09-08 22:49:35.260833] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-08 22:50:16.978525] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-08 23:01:30.126037] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+
+[2024-09-08 23:48:55.380523] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 7, "role": 2, "is_valid": true}
+[2024-09-08 23:49:46.998024] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 00:10:05.085176] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 00:10:16.360124] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 00:11:04.125299] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 04:12:59.406520] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 04:29:20.546635] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "1", "password": "1"}
+[2024-09-09 04:50:16.406583] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 04:51:39.537042] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 04:51:43.026493] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": true}
+[2024-09-09 04:55:01.014733] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 04:55:12.181290] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 0, "is_valid": false}
+[2024-09-09 04:55:19.066423] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 05:08:03.799438] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 05:08:06.598343] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 05:08:19.442778] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 05:08:21.541167] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
+请求参数: {"id": 8, "role": 2, "is_valid": false}

@@ -39,7 +39,7 @@ def login(data: LoginUserBody):
         raise NormalException(str(e))
 
 
-@router.get("/list", name='用户列表', response_model=UserListResDto)
+@router.get('/list', name='用户列表', response_model=UserListResDto)
 def info_list(page: int = 1, limit: int = 10, search: str = None, _: dict = Depends(Auth())):
     try:
         total, user_infos = UserDao.get_user_infos(page, limit, search)
@@ -48,7 +48,16 @@ def info_list(page: int = 1, limit: int = 10, search: str = None, _: dict = Depe
         raise NormalException(str(e))
 
 
-@router.post("/update", name="更新用户", response_model=ResponseDto)
+@router.get('/logout', name="退出登录", description="退出登录", response_model=ResponseDto)
+def logout(_: dict = Depends(Auth())):
+    try:
+        # todo 退出登录删除清空redis token数据
+        return ResponseDto(msg="退出成功")
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.post('/update', name="更新用户", response_model=ResponseDto)
 def banch_role(data: UpdateUserBody, user=Depends(Auth(Permission.ADMIN))):
     try:
         UserDao.update_user(data, user)

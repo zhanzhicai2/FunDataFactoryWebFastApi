@@ -1,9 +1,14 @@
-from datetime import datetime
+# -*- coding: utf-8 -*- 
+# @Time : 2022/5/8 18:14 
+# @Author : junjie
+# @File : user_schems.py
 
 from pydantic import BaseModel, validator, Field, EmailStr
 from config import Config, Permission
 import hashlib
-from app.models.base import ToolsSchemas, ResponseDto, ListDto
+from app.models.base import ToolsSchemas
+from datetime import datetime
+from app.models.base import ResponseDto, ListDto
 from typing import List
 
 
@@ -39,6 +44,22 @@ class LoginUserBody(BaseModel):
         return m.hexdigest()
 
 
+class UpdateUserBody(BaseModel):
+    id: int = Field(..., title="用户id", description="必传")
+    role: int = Field(None, title="用户权限", description="非必传")
+    is_valid: bool = Field(None, title="是否冻结", description="非必传")
+
+    @validator('id', 'role', 'is_valid')
+    def check_field(cls, v):
+        return ToolsSchemas.not_empty(v)
+
+    @validator('role')
+    def check_role_map(cls, value):
+        if value not in vars(Permission).values():
+            raise ValueError('角色类型有误')
+        return value
+
+
 class UserDto(BaseModel):
     id: int
     username: str
@@ -50,8 +71,8 @@ class UserDto(BaseModel):
     last_login_time: datetime
 
     class Config:
-        from_attributes = True  # google出来的代码，
-        # orm_mode = True  最近版本orm_mode 被命名from_attributes
+        # orm_mode = True
+        from_attributes = True
         json_encoders = {
             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
         }
@@ -77,19 +98,3 @@ class UserListResDto(ResponseDto):
         json_encoders = {
             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
         }
-
-
-class UpdateUserBody(BaseModel):
-    id: int = Field(..., title="用户ID", description="必传")
-    role: int = Field(None, title="用户权限", description="非必传")
-    is_valid: bool = Field(None, title="是否冻结", description="非必传")
-
-    @validator('id', 'role', 'is_valid')
-    def check_field(cls, v):
-        return ToolsSchemas.not_empty(v)
-
-    @validator('role')
-    def check_role_map(cls, value):
-        if value not in vars(Permission).values():
-            raise ValueError('角色类型有误')
-        return value

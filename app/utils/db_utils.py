@@ -15,7 +15,7 @@ class DbUtils(object):
         """
         for var, value in source.items():
             if not_null:
-                if value:
+                if value is not None:
                     setattr(dist, var, value)
             else:
                 setattr(dist, var, value)
