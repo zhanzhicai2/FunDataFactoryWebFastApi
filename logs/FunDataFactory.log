@@ -466,3 +466,71 @@ NameError: name 'asc' is not defined
 请求参数: {"id": 8, "role": 2, "is_valid": false}
 [2024-09-09 05:08:21.541167] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/update
 请求参数: {"id": 8, "role": 2, "is_valid": false}
+[2024-09-09 05:49:56.757901] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/register
+请求参数: {"username": "2", "password": "2", "name": "2", "email": "2@163.com"}
+[2024-09-09 19:57:45.002686] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "1", "password": "1"}
+[2024-09-09 19:58:59.715936] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "测试", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:01:17.873172] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:00.839887] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:33.343213] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:34.251318] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:34.708076] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:34.900253] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:35.146636] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:35.370559] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:35.570897] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:07:35.771526] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:44:19.746853] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "12", "password": "123456"}
+[2024-09-09 20:44:29.589577] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "2", "password": "123456"}
+[2024-09-09 20:45:13.561576] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:45:17.832145] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:47:58.722637] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:53:39.145163] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:54:26.672913] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "1", "password": "1"}
+[2024-09-09 20:54:33.632989] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "1", "password": "12"}
+[2024-09-09 20:55:09.948466] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:55:19.417041] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:57:16.570920] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:58:11.313699] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 20:58:45.545188] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 21:01:28.747252] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试", "description": "测试", "owner": "测试", "directory": "测试", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 21:01:57.010551] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试2", "description": "测试", "owner": "测试", "directory": "测试2", "private": true, "pull_type": 0, "git_project": "测试", "git_url": "http://plqg.gt/cexw", "git_branch": "测试", "git_account": "测试", "git_password": "测试"}
+[2024-09-09 21:12:21.969890] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project", "private": true, "pull_type": 0, "git_project": "demo", "git_url": "http://plgg.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
+[2024-09-09 21:12:44.281012] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project", "private": false, "pull_type": 0, "git_project": "demo", "git_url": "http://plgg.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
+[2024-09-09 21:14:04.679493] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo", "git_url": "http://plgg.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
+[2024-09-09 21:14:26.269982] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
+[2024-09-09 21:14:54.715845] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
+[2024-09-09 21:15:27.294265] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目2", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
