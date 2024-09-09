@@ -3,18 +3,17 @@
 # @Author: 龟仙岛
 # @Desc : 
 # @Date  :  2024/09/09
-from datetime import datetime
+from pydantic import BaseModel, validator, Field
 from typing import Literal, Optional, List
-
-from pydantic import BaseModel, Field, validator
-
-from app.models.base import ToolsSchemas, ResponseDto, ListDto
-from app.utils.aes_utils import AesUtils
+from app.models.base import ToolsSchemas
+from datetime import datetime
+from app.models.base import ResponseDto, ListDto
 
 
 class AddProject(BaseModel):
     project_name: str = Field(..., title="项目名称", description="必传")
-    owner: str = Field(..., title="项目负责人", description="必传")
+    description: str = Field(None, title="项目描述", description="非必传")
+    owner: int = Field(..., title="项目负责人", description="必传")
     directory: str = Field(..., title="脚本目录", description="必传")
     private: bool = Field(..., title="是否私有", description="必传")
     pull_type: Literal[0, 1] = Field(..., title="拉取项目形式", description="必传")
@@ -23,7 +22,6 @@ class AddProject(BaseModel):
     git_branch: str = Field(..., title="git分支名", description="必传")
     git_account: Optional[str] = Field(..., title="git账号", description="非必传")
     git_password: Optional[str] = Field(..., title="git密码", description="非必传")
-    description: str = Field(None, title="项目描述", description="非必传")
 
     @validator('project_name', 'owner', 'directory', 'private', 'git_project', 'pull_type', 'git_url', 'git_branch')
     def name_not_empty(cls, v):
@@ -58,7 +56,7 @@ class ProjectDto(BaseModel):
     project_name: str
     description: str = None
     directory: str
-    owner: str
+    owner: int
     private: bool
     pull_type: int
     git_project: str
@@ -80,10 +78,6 @@ class ProjectDto(BaseModel):
         json_encoders = {
             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
         }
-
-
-class ProjectResDto(ResponseDto):
-    data: ProjectDto
 
 
 class ProjectList(ListDto):

@@ -65,7 +65,8 @@ async def unexpected_exception_error(request: Request, exc: NormalException):
         body = json.dumps(await request.json(), ensure_ascii=False)
         log_msg += f"请求参数: {body}"
     Log().info(log_msg)
-    res = ResponseDto(code=110, msg=exc.detail)
+    # res = ResponseDto(code=110, msg=exc.detail)
+    res = ResponseDto(code=403, msg=exc.detail)
     return JSONResponse(content=res.dict())
 
 
@@ -99,7 +100,8 @@ async def errors_handling(request: Request, call_next):
 # 自定义权限异常
 @fun.exception_handler(PermissionException)
 async def unexpected_exception_error(request: Request, exc: PermissionException):
-    res = ResponseDto(code=403, msg=HTTP_MSG_MAP.get(exc.status_code, exc.detail))
+    # res = ResponseDto(code=403, msg=HTTP_MSG_MAP.get(exc.status_code, exc.detail))
+    res = ResponseDto(code=401, msg=exc.detail)
     return JSONResponse(content=res.dict())
 
 
