@@ -534,3 +534,11 @@ NameError: name 'asc' is not defined
 请求参数: {"project_name": "测试项目", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目1"}
 [2024-09-09 21:15:27.294265] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
 请求参数: {"project_name": "测试项目2", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
+[2024-09-10 04:10:28.760222] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目2", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
+[2024-09-10 04:10:40.023939] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目3", "owner": "1", "directory": "case/project1", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
+[2024-09-10 04:10:47.366792] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目3", "owner": "1", "directory": "case/project3", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
+[2024-09-10 04:11:06.105626] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目3", "owner": "1", "directory": "case/project3", "private": false, "pull_type": 0, "git_project": "demo3", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目3"}

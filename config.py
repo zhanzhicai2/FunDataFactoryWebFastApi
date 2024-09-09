@@ -16,7 +16,10 @@ class Config(object):
     # 数据库配置
     SQLALCHEMY_DATABASE_URI: str = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
     KEY = "funDataFactory"
-    EXPIRED_HOUR = 12
+    EXPIRED_HOUR = 12  # token过期时长
+
+    AES_KEY = 'SVuRc6B7xsZnUWQO'  # AES 秘钥
+    AES_IV = 'MUnDCU0aADgs4hd1'  # AES 偏移量
 
 
 class Text(object):
@@ -53,5 +56,3 @@ HTTP_MSG_MAP = {
     500: '服务器内部错误',
     302: '请求方法不支持'
 }
-
-
