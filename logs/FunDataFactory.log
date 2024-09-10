@@ -542,3 +542,6 @@ NameError: name 'asc' is not defined
 请求参数: {"project_name": "测试项目3", "owner": "1", "directory": "case/project3", "private": false, "pull_type": 0, "git_project": "demo1", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目2"}
 [2024-09-10 04:11:06.105626] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
 请求参数: {"project_name": "测试项目3", "owner": "1", "directory": "case/project3", "private": false, "pull_type": 0, "git_project": "demo3", "git_url": "http://plgg1.gt/cexw", "git_branch": "master", "git_account": "1", "git_password": "123456", "description": "测试项目3"}
+[2024-09-10 10:31:37.466074] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10
+

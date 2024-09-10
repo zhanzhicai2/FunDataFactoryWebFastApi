@@ -5,12 +5,15 @@
 # @Date  :  2024/09/10
 from app import NormalException, Log
 from app.models import Session
+from app.models.project import DataFactoryProject
 from app.models.project_role import DataFactoryProjectRole
 from app.models.user import DataFactoryUser
 from app.routers.project.project_role_schema import AddProjectRole, EditProjectRole
 from app.utils.db_utils import DbUtils
 from app.utils.exception_utils import record_log
 from sqlalchemy import desc, or_
+
+from config import Permission
 
 
 class ProjectRoleDao(object):
@@ -26,6 +29,7 @@ class ProjectRoleDao(object):
         :return:
         """
         with Session() as session:
+            cls.operation_permission(form.project_id, user)
             user_query = session.query(DataFactoryUser).filter(DataFactoryUser.id == form.user_id).first()
             if user_query is None:
                 raise Exception("用户不存在！！！")
@@ -55,6 +59,7 @@ class ProjectRoleDao(object):
                                                                            DataFactoryProjectRole.del_flag == 0).first()
             if user_role_query is None:
                 raise NormalException("用户角色不存在！！！")
+            cls.operation_permission(user_role_query.project_id, user)
             DbUtils.update_model(user_role_query, form.dict(), user)
             session.commit()
 
@@ -72,6 +77,7 @@ class ProjectRoleDao(object):
                                                                            DataFactoryProjectRole.del_flag == 0).first()
             if user_role_query is None:
                 raise NormalException("用户角色不存在！！！")
+            cls.operation_permission(user_role_query.project_id, user)
             DbUtils.delete_model(user_role_query, user)
             session.commit()
 
@@ -87,6 +93,7 @@ class ProjectRoleDao(object):
         :return:
         """
         with Session() as session:
+            cls.operation_permission(project_id, user)
             filter_list = [DataFactoryProjectRole.del_flag == 0, DataFactoryProjectRole.project_id == project_id]
             if search:
                 filter_list.append(
@@ -103,32 +110,64 @@ class ProjectRoleDao(object):
             count = roles.count()
             return role_infos, count
 
-    # @classmethod
-    # @record_log
-    # def update_project_role(cls, form: EditProjectRole, user: dict) -> None:
-    #     """更新用户项目权限"""
-    #     with Session() as session:
-    #         session.expire_on_commit = False
-    #         user_role_query = session.query(DataFactoryProjectRole).filter(DataFactoryProjectRole.id == form.id,
-    #                                                                        DataFactoryProjectRole.del_flag == 0).first()
-    #         if user_role_query is None:
-    #             raise Exception("用户角色不存在！！！")
-    #         DbUtils.update_model(user_role_query, form.dict(), user)
-    #         session.commit()
+    @classmethod
+    @record_log
+    def project_by_user(cls, user):
+        """
+        根据用户获取权限范围内项目
+        :param user: 用户数据
+        :return:
+        """
+        with Session() as session:
+            projects = session.query(DataFactoryProjectRole.project_id).filter(
+                DataFactoryProjectRole.user_id == user['id'],
+                DataFactoryProjectRole.del_flag == 0).all()
+            return [i[0] for i in projects]
 
-    # @classmethod
-    # @record_log
-    # def delete_project_role(cls, id: int, user: dict) -> None:
-    #     """
-    #     删除项目权限
-    #     :param id: 主键id
-    #     :param user: 用户数据
-    #     :return:
-    #     """
-    #     with Session() as session:
-    #         user_role_query = session.query(DataFactoryProjectRole).filter(DataFactoryProjectRole.id == id,
-    #                                                                        DataFactoryProjectRole.del_flag == 0).first()
-    #         if user_role_query is None:
-    #             raise NormalException("用户角色不存在！！！")
-    #         DbUtils.delete_model(user_role_query, user)
-    #         session.commit()
+    @classmethod
+    @record_log
+    def read_permission(cls, project_id: int, user: dict) -> None:
+        """判断是否有项目查看权限"""
+        if user['role'] == Permission.ADMIN:
+            # 超管不限制
+            return
+        with Session() as session:
+            project = session.query(DataFactoryProject).filter(DataFactoryProject.id == project_id,
+                                                               DataFactoryProject.del_flag == 0).first()
+            if project is None: raise NormalException("项目不存在")
+            if project.owner == user['id']:
+                # 项目负责人可以查看
+                return
+            else:
+                # 查询是否在项目配有权限
+                project_role = session.query(DataFactoryProjectRole).filter(
+                    DataFactoryProjectRole.user_id == user['id'],
+                    DataFactoryProjectRole.project_id == project_id,
+                    DataFactoryProjectRole.del_flag == 0).first()
+                if project_role is None:
+                    raise NormalException(f"对不起，你没有{project.project_name}项目权限！！！")
+
+    @classmethod
+    @record_log
+    def operation_permission(cls, project_id, user):
+        """判断是否有项目操作权限"""
+        with Session() as session:
+            project = session.query(DataFactoryProject).filter(DataFactoryProject.id == project_id,
+                                                               DataFactoryProject.del_flag == 0).first()
+            if project is None: raise Exception("项目不存在")
+            if user['role'] == Permission.ADMIN or project.owner == user['id']:
+                # 超管 或者 项目负责人可以操作
+                return
+            else:
+                # 非超管 或者 非项目负责人
+                role_query = session.query(DataFactoryProjectRole) \
+                    .filter(DataFactoryProjectRole.user_id == user['id'],
+                            DataFactoryProjectRole.project_id == project_id,
+                            DataFactoryProjectRole.del_flag == 0).first()
+
+                if role_query is None or role_query.project_role == Permission.MEMBERS:
+                    # 查询为空 或者 项目权限为组员
+                    raise Exception(f"对不起，你没有{project.project_name}项目操作权限！！！")
+                else:
+                    # 组长可以操作
+                    return

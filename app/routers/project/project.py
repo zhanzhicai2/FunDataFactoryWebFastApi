@@ -27,7 +27,7 @@ def insert_project(body: AddProject, user=Depends(Auth(Permission.ADMIN))):
 
 
 @router.post("/update", name="编辑项目", response_model=ResponseDto)
-def update_project(body: EditProject, user=Depends(Auth(Permission.LEADER))):
+def update_project(body: EditProject, user=Depends(Auth())):  # user=Depends(Auth(Permission.LEADER))
     try:
         ProjectDao.update_project(body, user)
         return ResponseDto(msg="编辑成功")
@@ -36,11 +36,30 @@ def update_project(body: EditProject, user=Depends(Auth(Permission.LEADER))):
 
 
 @router.get("/delete", name="删除项目", response_model=ResponseDto)
-def delete_project(id: int, user=Depends(Auth(Permission.LEADER))):
+def delete_project(id: int, user=Depends(Auth())):  # user=Depends(Auth(Permission.LEADER))
     try:
         # 暂时用不到，用_占坑，后续加入后置操作
         # _ = ProjectDao.delete_project(id, user)
+        ProjectDao.delete_project(id, user)
         return ResponseDto(msg="删除成功")
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.get("/read", name="判断是否有项目查看权限", response_model=ResponseDto)
+def read_project(id: int, user=Depends(Auth())):
+    try:
+        ProjectRoleDao.read_permission(id, user)
+        return ResponseDto()
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.get("/operation", name="判断用户是否有项目操作权限")
+def operation_project(id: int, user=Depends(Auth())):
+    try:
+        ProjectRoleDao.operation_permission(id, user)
+        return ResponseDto()
     except Exception as e:
         raise NormalException(str(e))
 
