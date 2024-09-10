@@ -3,16 +3,20 @@
 # @Author: 龟仙岛
 # @Desc : 
 # @Date  :  2024/09/09
+import os
+
 from fastapi import APIRouter, Depends
 
 from app import ResponseDto
+from app.core.git import Git
 from app.curd.project.ProjectDao import ProjectDao
 from app.routers.project.project_role_schema import AddProjectRole, EditProjectRole, RoleListResDto
 from app.routers.project.project_schema import AddProject, EditProject, ProjectListResDto
 from app.curd.project_role.ProjectRoleDao import ProjectRoleDao
+from app.utils.aes_utils import AesUtils
 from app.utils.auth_utils import Auth
 from app.utils.exception_utils import NormalException
-from config import Permission
+from config import Permission, FilePath
 
 router = APIRouter()
 
@@ -69,6 +73,24 @@ def get_project_infos(page: int = 1, limit: int = 10, search=None, _=Depends(Aut
     try:
         total, project_infos = ProjectDao.list_project(page, limit, search)
         return ProjectListResDto(data=dict(total=total, lists=project_infos))
+    except Exception as e:
+        raise NormalException(str(e))
+
+
+@router.get('/init', name="初始化项目", response_model=ResponseDto)
+def init_project(id: int, user=Depends(Auth())):
+    try:
+        project = ProjectDao.project_detail(id, user)
+        project_path = os.path.join(FilePath.BASE_DIR, project.git_project)
+        if os.path.isdir(project_path):
+            raise Exception("项目已存在, 请执行刷新项目！")
+        # 拉取项目
+        if project.pull_type == 0:
+            Git.git_clone_http(project.git_branch, project.git_url, project.git_account,
+                               AesUtils.decrypt(project.git_password))
+        else:
+            Git.git_clone_ssh(project.git_branch, project.git_url)
+        return ResponseDto(msg="初始化成功")
     except Exception as e:
         raise NormalException(str(e))
 

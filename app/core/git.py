@@ -34,3 +34,18 @@ class Git(object):
                       f"git clone -b {git_branch} {Git.git_url(git_url, user, password)}\n"
         CmdUtils.cmd(command_str)
         Git.log.info("克隆结束")
+
+    @staticmethod
+    def git_clone_ssh(git_branch, git_url):
+        """
+        ssh克隆
+        :param git_branch: 分支名
+        :param git_url: 代码地址
+        :return:
+        """
+        Git.log.info("ssh克隆开始")
+        command_str = f"cd {FilePath.BASE_DIR}\n" \
+                      f'git clone -b {git_branch} {git_url} --config core.sshCommand="ssh -i {FilePath.RSA_PRI_KEY}"\n'
+        CmdUtils.cmd(command_str)
+        Git.log.info("ssh克隆结束")
+

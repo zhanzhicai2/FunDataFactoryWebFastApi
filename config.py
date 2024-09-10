@@ -36,6 +36,9 @@ class FilePath(object):
 
     CURD_PATH = os.path.join(APP_PATH, "curd")  # dao路径
 
+    RSA_PUB_KEY = os.path.join(BASE_DIR, 'rsa_pub_key')  # 私钥
+    RSA_PRI_KEY = os.path.join(BASE_DIR, 'rsa_pri_key')
+
     LOG_FILE_PATH = os.path.join(BASE_DIR, "logs")  # 日志文件路径
     if not os.path.isdir(LOG_FILE_PATH): os.mkdir(LOG_FILE_PATH)
 
