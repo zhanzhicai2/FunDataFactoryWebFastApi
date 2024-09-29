@@ -13,7 +13,7 @@ def generate_ssh_key():
     # 私钥生成
     key.write_private_key_file(FilePath.RSA_PRI_KEY)
     # 公钥生成
-    rsa_pub_key = f"{key.get_name()} {key.get_base64()} FunDataFactory"
+    rsa_pub_key = f"{key.get_name()} {key.get_base64()} FunDataFactoryFastApi"
     with open(FilePath.RSA_PUB_KEY, 'w') as f:
         f.write(rsa_pub_key)
 

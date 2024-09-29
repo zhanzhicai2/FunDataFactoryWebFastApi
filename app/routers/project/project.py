@@ -22,7 +22,7 @@ router = APIRouter()
 
 
 @router.post("/insert", name="新增项目", response_model=ResponseDto)
-def insert_project(body: AddProject, user=Depends(Auth(Permission.ADMIN))):
+def insert_project(body: AddProject, user=Depends(Auth(Permission.LEADER))):
     try:
         ProjectDao.insert_project(body, user)
         return ResponseDto(msg="新增成功")
@@ -69,9 +69,13 @@ def operation_project(id: int, user=Depends(Auth())):
 
 
 @router.get("/list", name="项目列表", response_model=ProjectListResDto)
-def get_project_infos(page: int = 1, limit: int = 10, search=None, _=Depends(Auth())):
+# 修改过
+# def get_project_infos(page: int = 1, limit: int = 10, search=None, user=Depends(Auth())):
+def get_project_infos(page: int = 1, limit: int = 10, search=1, user=Depends(Auth())):
     try:
-        total, project_infos = ProjectDao.list_project(page, limit, search)
+        total, project_infos = ProjectDao.list_project(user, page, limit, search)
+        # data = ProjectListResDto(data=dict(total=total, lists=project_infos))
+        # print(data)
         return ProjectListResDto(data=dict(total=total, lists=project_infos))
     except Exception as e:
         raise NormalException(str(e))

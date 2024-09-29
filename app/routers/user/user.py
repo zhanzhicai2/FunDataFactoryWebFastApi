@@ -1,4 +1,5 @@
 import json
+from typing import List
 
 from fastapi import APIRouter, Depends
 from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto, UserListResDto, \
@@ -31,7 +32,7 @@ def login(data: LoginUserBody):
         # xx.dict() 返回模型的字段和值的字典
         # 返回表示 dict() 的 JSON 字符串，只有当转换为json，模型里面的编码规则(json_encoders)才生效
         user_data = user_model.json()
-        print(user_data)
+        # print(user_data)
         token = UserToken.get_token(json.loads(user_data))
         setattr(user, 'token', token)
         return LoginResDto(data=user)
@@ -64,3 +65,10 @@ def banch_role(data: UpdateUserBody, user=Depends(Auth(Permission.ADMIN))):
         return ResponseDto(msg="修改成功")
     except Exception as e:
         raise NormalException(str(e))
+
+
+# @router.post("/search", name="搜索用户", response_model=ResponseDto[List[UserDto]],
+#              response_model_exclude=list_object_exclude(["role", "is_valid", "create_time", "last_login_time"]))
+# def banch_role(body: SearchUserBody):
+#     user_list = UserDao.search_user(body)
+#     return ResponseDto(data=user_list)

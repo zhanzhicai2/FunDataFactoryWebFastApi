@@ -4,7 +4,7 @@
 # @Desc : 
 # @Date  :  2024/09/09
 from pydantic import BaseModel, validator, Field
-from typing import Literal, Optional, List
+from typing import Literal, Optional, List, Union
 from app.models.base import ToolsSchemas
 from datetime import datetime
 from app.models.base import ResponseDto, ListDto
@@ -56,7 +56,7 @@ class ProjectDto(BaseModel):
     project_name: str
     description: str = None
     directory: str
-    owner: int
+    owner: str
     private: bool
     pull_type: int
     git_project: str
@@ -91,3 +91,7 @@ class ProjectListResDto(ResponseDto):
         json_encoders = {
             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
         }
+
+
+class ProjectDetailDto(ProjectDto):
+    rsa_pub_key: Union[str, None]

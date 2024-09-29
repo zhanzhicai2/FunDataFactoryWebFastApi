@@ -52,3 +52,18 @@ class FunBaseModel(Base):
         self.create_name = create_name
         self.update_code = update_code
         self.update_name = update_name
+
+
+def list_object_exclude(fields: list):
+    exclude_map = {"data": {"__all__": {*fields}}}
+    return exclude_map
+
+
+def object_exclude(fields: list):
+    exclude_map = {"data": {*fields}}
+    return exclude_map
+
+
+def list_exclude(fields: list):
+    exclude_map = {"data": {"__all__": {*fields}}}
+    return exclude_map

@@ -545,3 +545,1153 @@ NameError: name 'asc' is not defined
 [2024-09-10 10:31:37.466074] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
 路径参数: page=1&limit=10
 
+[2024-09-11 00:15:47.729229] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-11 00:15:51.538354] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 00:15:51.549137] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 00:15:59.403488] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 00:15:59.405502] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:39:35.981135] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:39:35.986850] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:39:58.324165] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:39:58.326830] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:40:10.198956] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-11 02:40:20.930351] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:40:20.931513] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:48:25.303490] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:48:25.306115] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:49:28.526876] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:49:28.528144] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 02:56:55.366725] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 02:56:55.372008] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:06:44.964399] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:06:44.973381] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:19:39.746930] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:19:39.748204] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:20:42.184932] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:20:42.186117] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:20:57.879793] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:20:57.880861] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:20:58.848481] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:20:58.849537] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:21:11.092603] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:21:11.093842] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:21:18.911513] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:21:18.912945] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:33:30.516841] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:33:30.518906] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 10:37:43.621238] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 10:37:43.623715] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:05:48.564529] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:05:48.572267] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:05:54.631028] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:05:54.631989] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:08:08.557413] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:08:08.559247] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:08:09.050131] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:08:09.051265] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:08:09.303354] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:08:09.304402] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:08:36.578920] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:08:36.580070] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:09:06.336454] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:09:06.337541] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:09:24.839416] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:09:24.840550] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:09:38.451827] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:09:38.453010] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 13:22:15.249326] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 13:22:15.252162] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 16:16:39.227460] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-11 16:16:44.996644] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 16:16:44.997869] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 16:17:04.910253] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 16:17:04.911489] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:47:04.859037] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:47:04.865570] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:47:19.391384] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-11 19:47:27.534727] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:47:27.536014] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:53:46.604627] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:53:46.624600] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:54:33.357109] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:54:33.358369] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:57:27.803304] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:57:27.804760] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 19:57:37.893565] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 19:57:37.894653] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 20:02:32.128811] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-11 20:02:32.130136] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-11 20:14:40.419637] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+请求参数: {"username": "2", "password": "123456"}
+[2024-09-11 20:15:42.111460] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/read
+路径参数: id=9
+
+[2024-09-11 20:28:34.230773] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/read
+路径参数: id=9
+
+[2024-09-19 00:08:07.537479] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-19 00:08:07.552707] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-19 20:20:18.762375] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-19 20:20:26.940549] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-19 20:20:31.507293] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-19 20:20:34.744489] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-19 20:20:34.745890] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 17:33:58.777229] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 17:33:58.787916] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:07:02.053531] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:07:02.056584] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:07:03.725378] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:07:03.727111] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:16:04.879799] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:16:04.881168] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:23:00.193096] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:23:00.194512] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:23:18.197739] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:23:18.199360] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:23:33.897715] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:23:33.899087] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:23:49.790030] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:23:49.792579] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:24:24.888483] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:24:24.890166] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:56:43.151692] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:56:43.155492] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 18:56:46.329270] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 18:56:46.332473] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:14:17.901798] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:14:17.904865] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:14:42.114857] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:14:42.116316] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:37:42.166123] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:37:42.168448] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:39:57.268364] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:39:57.272056] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:43:58.666979] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:43:58.669020] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:44:58.203631] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+NameError: name 'user' is not defined
+
+[2024-09-20 19:44:58.206179] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:54:43.963198] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 111, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+TypeError: 'int' object is not subscriptable
+
+[2024-09-20 19:54:43.965747] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 111, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+TypeError: 'int' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'int' object is not subscriptable
+
+[2024-09-20 19:54:43.966550] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 19:57:00.116625] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 112, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+TypeError: 'int' object is not subscriptable
+
+[2024-09-20 19:57:00.118464] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 112, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+TypeError: 'int' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 98, in list_project
+    filter_list = [*cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'int' object is not subscriptable
+
+[2024-09-20 19:57:00.119169] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:12:42.240205] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:13:01.883401] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:15:34.598951] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:19:04.496039] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:19:29.531605] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:19:34.008593] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:33:24.792912] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:33:33.281326] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-20 20:55:49.087379] INFO: git: 开始克隆, 方式为http
+[2024-09-20 20:55:49.958305] ERROR: CmdUtils: cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master https://zhanzhicai:Zhanzhicai0502@gitee.com/zhanzhicai/img
+ 命令执行失败, 错误信息: Command 'cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master https://zhanzhicai:Zhanzhicai0502@gitee.com/zhanzhicai/img
+' returned non-zero exit status 128.
+[2024-09-20 20:57:23.940451] INFO: git: 开始克隆, 方式为http
+[2024-09-20 20:57:24.803160] INFO: git: 克隆结束
+[2024-09-20 21:25:47.976857] INFO: git: ssh克隆开始
+[2024-09-20 21:25:48.043437] ERROR: CmdUtils: cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master https://gitee.com/zhanzhicai/img --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+ 命令执行失败, 错误信息: Command 'cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master https://gitee.com/zhanzhicai/img --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+' returned non-zero exit status 128.
+[2024-09-20 21:27:15.995500] INFO: git: ssh克隆开始
+[2024-09-20 21:27:16.053642] ERROR: CmdUtils: cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+ 命令执行失败, 错误信息: Command 'cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+' returned non-zero exit status 128.
+[2024-09-20 21:30:26.976913] INFO: git: ssh克隆开始
+[2024-09-20 21:30:27.036831] ERROR: CmdUtils: cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+ 命令执行失败, 错误信息: Command 'cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+' returned non-zero exit status 128.
+[2024-09-20 21:41:24.959023] INFO: git: ssh克隆开始
+[2024-09-20 21:41:25.351952] ERROR: CmdUtils: cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+ 命令执行失败, 错误信息: Command 'cd /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi
+git clone -b master git@gitee.com:zhanzhicai/img.git --config core.sshCommand="ssh -i /Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/rsa_pri_key"
+' returned non-zero exit status 128.
+[2024-09-20 21:45:12.922174] INFO: git: ssh克隆开始
+[2024-09-20 21:45:14.048223] INFO: git: ssh克隆结束
+[2024-09-21 17:05:50.450686] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:06:44.257914] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-21 17:06:56.605939] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:07:01.442081] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:08:16.471525] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:08:40.441961] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:10:31.387350] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=9
+
+[2024-09-21 17:19:28.763143] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=9
+
+[2024-09-21 17:42:38.760382] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 17:49:48.074470] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/user/login
+
+[2024-09-21 17:51:39.708184] INFO: git: 开始克隆, 方式为http
+[2024-09-21 17:51:40.733233] INFO: git: 克隆结束
+[2024-09-21 17:55:01.925970] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目2", "description": "项目描述12", "owner": 2, "directory": "case/project", "private": false, "pull_type": 1, "git_project": "img", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 17:55:24.298399] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目2", "description": "项目描述12", "owner": 2, "directory": "case/project2", "private": false, "pull_type": 1, "git_project": "img", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 17:56:17.935095] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目重复不通过12", "description": "项目描述重复不通过12", "owner": 2, "directory": "case/project2", "private": false, "pull_type": 1, "git_project": "img", "git_url": "git@gitee.com:zhanzhicai/img1.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 17:59:46.143671] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=6
+
+[2024-09-21 18:00:14.866252] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=5
+
+[2024-09-21 18:00:28.275530] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=6
+
+[2024-09-21 18:01:05.351211] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=6
+
+[2024-09-21 18:01:10.535653] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=5
+
+[2024-09-21 18:03:04.542384] INFO: git: 开始克隆, 方式为http
+[2024-09-21 18:03:05.410683] INFO: git: 克隆结束
+[2024-09-21 18:03:32.835434] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/init
+路径参数: id=5
+
+[2024-09-21 18:05:20.984146] INFO: git: ssh克隆开始
+[2024-09-21 18:05:22.007829] INFO: git: ssh克隆结束
+[2024-09-21 18:06:17.370453] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目12", "description": "项目描述12", "owner": 2, "directory": "case/project2", "private": false, "pull_type": 1, "git_project": "img3", "git_url": "https://gitee.com/zhanzhicai/img", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:06:31.893795] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目12", "description": "项目描述12", "owner": 2, "directory": "case/project3", "private": false, "pull_type": 1, "git_project": "img3", "git_url": "https://gitee.com/zhanzhicai/img", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:07:04.246947] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目12", "description": "项目描述12", "owner": 2, "directory": "case/project3", "private": false, "pull_type": 1, "git_project": "img3", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:13.249710] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:46.706759] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:55.202873] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:56.541185] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:57.393033] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:57.603169] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:59.479430] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:23:59.685465] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:26:02.473177] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 18:34:14.740481] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/insert
+请求参数: {"project_name": "测试项目212", "description": "项目描述212", "owner": 2, "directory": "case/project212", "private": false, "pull_type": 1, "git_project": "img212", "git_url": "git@gitee.com:zhanzhicai/img.git", "git_branch": "master", "git_account": null, "git_password": null}
+[2024-09-21 20:54:38.271878] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 20:54:44.094666] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:25:03.037716] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:26:07.203326] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:41:10.620387] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:41:36.106477] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:43:32.753289] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:43:33.559823] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:44:22.109730] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:48:24.615094] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:48:47.834383] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:49:21.358936] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:51:41.585935] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:52:47.964434] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+TypeError: list_project() takes from 1 to 4 positional arguments but 5 were given
+
+[2024-09-21 21:52:47.965611] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:55:09.894946] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 131, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 21:55:09.896326] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 131, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 96, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 21:55:09.896964] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:57:56.316330] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 133, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 21:57:56.319724] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 133, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 21:57:56.320457] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:58:09.698737] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 133, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 21:58:09.700833] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 133, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 21:58:09.702112] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 21:59:54.922042] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 21:59:54.934244] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 21:59:54.934935] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:00:32.184067] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 132, in user_all_projects
+    print(user['role'])
+KeyError: 'role'
+
+[2024-09-21 22:00:32.185725] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 132, in user_all_projects
+    print(user['role'])
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 22:00:32.186506] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:02:06.277603] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 22:02:06.281122] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 22:02:06.282160] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:02:28.381581] ERROR: ProjectDao: user_all_projects失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+[2024-09-21 22:02:28.382992] ERROR: ProjectDao: list_project失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 134, in user_all_projects
+    if user['role'] != Permission.ADMIN:
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project/ProjectDao.py", line 97, in list_project
+    filter_list = [DataFactoryProject.del_flag == 0, *cls.user_all_projects(user)]
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 39, in wrapper
+    raise Exception(str(e))
+Exception: 'role'
+
+[2024-09-21 22:02:28.383616] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:07:10.377949] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:07:21.187950] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:07:41.166161] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:12:15.605496] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:12:17.882428] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:16:23.725385] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:16:26.119435] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:17:29.687208] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:17:38.202705] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:19:14.280938] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:24:43.152560] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:31:07.030810] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:33:22.425035] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:33:39.937099] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:33:55.965499] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:37:44.657302] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:37:49.790293] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:39:58.532958] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:40:54.222631] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:41:06.174621] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:44:20.793262] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:44:21.323207] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:58:00.765549] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:58:07.272168] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-21 22:59:03.600788] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10
+
+[2024-09-22 06:48:36.310687] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 06:49:28.320690] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10
+
+[2024-09-22 06:49:33.879073] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10&search=1
+
+[2024-09-22 07:19:25.236573] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:19:48.498066] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10&search=1
+
+[2024-09-22 07:24:52.964955] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10&search=1
+
+[2024-09-22 07:24:55.610198] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10&search=1
+
+[2024-09-22 07:26:20.998445] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:26:26.790689] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:26:46.537497] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:27:12.950358] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:34:31.584474] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:35:18.223115] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=18
+
+[2024-09-22 07:35:51.213923] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=10
+
+[2024-09-22 23:05:47.967341] ERROR: ProjectRoleDao: operation_permission失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project_role/ProjectRoleDao.py", line 170, in operation_permission
+    raise Exception(f"对不起，你没有{project.project_name}项目操作权限！！！")
+Exception: 对不起，你没有测试项目12项目操作权限！！！
+
+[2024-09-22 23:05:47.993122] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/operation
+路径参数: id=7
+
+[2024-09-22 23:05:50.504955] ERROR: ProjectRoleDao: operation_permission失败:Traceback (most recent call last):
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/utils/exception_utils.py", line 32, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/zhicaizhan/Desktop/py/FunDataFactory/FunDataFactoryFastApi/app/curd/project_role/ProjectRoleDao.py", line 170, in operation_permission
+    raise Exception(f"对不起，你没有{project.project_name}项目操作权限！！！")
+Exception: 对不起，你没有测试项目12项目操作权限！！！
+
+[2024-09-22 23:05:50.505573] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/operation
+路径参数: id=7
+

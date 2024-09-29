@@ -13,12 +13,12 @@ from starlette.middleware.cors import CORSMiddleware
 
 fun = FastAPI(title=Text.TITLE, version=Text.VERSION, description=Text.DESCRIPTION)
 fun.add_middleware(
-            CORSMiddleware,
-            allow_origins=["*"],
-            allow_credentials=True,
-            allow_methods=["*"],
-            allow_headers=["*"],
-        )
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 for item in routers.data:
     fun.include_router(item[0], prefix=item[1], tags=item[2])

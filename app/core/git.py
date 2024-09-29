@@ -49,3 +49,23 @@ class Git(object):
         CmdUtils.cmd(command_str)
         Git.log.info("ssh克隆结束")
 
+    @staticmethod
+    def git_pull(project_path: str, git_branch: str) -> None:
+        """
+        拉起代码
+        :param project_path:
+        :param git_branch:
+        :return:
+        """
+        # logger.info
+
+
+# if __name__ == '__main__':
+#     # git_url = 'https://gitee.com/zhanzhicai/img'
+#     git_url = 'git@gitee.com:zhanzhicai/img.git'
+#     git_branch = 'master'
+#     project = 'img'
+#     user = 'zhanzhicai'
+#     password = 'Zhanzhicai0502'
+#     Git.git_clone_ssh(git_branch, git_url)
+    # Git.git_clone_http(git_branch,git_url,user,password)
