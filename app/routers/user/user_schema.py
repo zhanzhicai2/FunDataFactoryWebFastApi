@@ -60,6 +60,14 @@ class UpdateUserBody(BaseModel):
         return value
 
 
+class SearchUserBody(BaseModel):
+    keyword: str = Field(..., title="搜索内容", description="必传")
+
+    @validator('keyword')
+    def check_field(cls, v):
+        return ToolsSchemas.not_empty(v)
+
+
 class UserDto(BaseModel):
     id: int
     username: str

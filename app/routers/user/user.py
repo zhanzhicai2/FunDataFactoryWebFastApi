@@ -3,11 +3,11 @@ from typing import List
 
 from fastapi import APIRouter, Depends
 from app.routers.user.user_schema import RegisterUserBody, LoginResDto, LoginUserBody, UserDto, UserListResDto, \
-    UpdateUserBody
+    UpdateUserBody, SearchUserBody
 from app.curd.user.UserDao import UserDao
 from app.utils.auth_utils import UserToken, Auth
 from app.utils.exception_utils import NormalException
-from app.models.base import ResponseDto
+from app.models.base import ResponseDto, list_object_exclude, ResponseDto1
 from config import Permission
 
 router = APIRouter()
@@ -23,6 +23,7 @@ def register(data: RegisterUserBody):
 
 
 @router.post('/login', name='用户登录', description='用户登录', response_model=LoginResDto)
+# @router.post("/login", name="用户登录", description="用户登录", response_model=ResponseDto[UserTokenDto])
 def login(data: LoginUserBody):
     try:
         user = UserDao.user_login(data)
@@ -67,8 +68,8 @@ def banch_role(data: UpdateUserBody, user=Depends(Auth(Permission.ADMIN))):
         raise NormalException(str(e))
 
 
-# @router.post("/search", name="搜索用户", response_model=ResponseDto[List[UserDto]],
+# @router.post("/search", name="搜索用户", response_model=ResponseDto1[List[UserDto]],
 #              response_model_exclude=list_object_exclude(["role", "is_valid", "create_time", "last_login_time"]))
 # def banch_role(body: SearchUserBody):
 #     user_list = UserDao.search_user(body)
-#     return ResponseDto(data=user_list)
+#     return ResponseDto1(data=user_list)

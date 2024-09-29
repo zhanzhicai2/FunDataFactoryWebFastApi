@@ -1,8 +1,9 @@
 from datetime import datetime
 
-from pydantic import BaseModel
-from typing import Any
+from pydantic import BaseModel, Field
+from typing import Any, TypeVar, Generic
 
+from pydantic.v1.generics import GenericModel
 from sqlalchemy import Column, INT, DATETIME, SMALLINT, String, func
 
 from app.models import Base
@@ -12,6 +13,20 @@ class ResponseDto(BaseModel):
     code: int = 200
     msg: str = '请求成功'
     data: Any = None
+
+
+DataT = TypeVar("DataT")
+
+
+class ResponseDto1(GenericModel, Generic[DataT]):
+    code: int = Field(200, title="返参code")
+    msg: str = Field('请求成功', title="返参msg")
+    data: DataT = Field(None, title="返参data")
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
+        }
 
 
 class ToolsSchemas(object):
@@ -31,13 +46,22 @@ class ListDto(BaseModel):
     lists: list = []
 
 
+class ListDto1(GenericModel, Generic[DataT]):
+    total: int = 0
+    lists: DataT
+
+
+# class ListResponseDto(ResponseDto, Generic[DataT]):
+#     data: ListDto[DataT] = None
+
+
 class FunBaseModel(Base):
     id = Column(INT, primary_key=True, comment="主键id")
     create_time = Column(DATETIME, nullable=False, comment="创建时间")
     update_time = Column(DATETIME, onupdate=func.now(), nullable=False, comment="更新时间")
     del_flag = Column(SMALLINT, default=0, nullable=False, comment="0: 未删除 1: 已删除")
-    create_code = Column(INT, nullable=True, comment="创建人编码")
-    create_name = Column(String(20), nullable=True, comment="创建人")
+    create_code = Column(INT, nullable=False, comment="创建人编码")
+    create_name = Column(String(20), nullable=False, comment="创建人")
     update_code = Column(INT, nullable=True, comment="更新人编码")
     update_name = Column(String(20), nullable=True, comment="更新人")
     # 设置为True，代表为基类，不会被创建为表

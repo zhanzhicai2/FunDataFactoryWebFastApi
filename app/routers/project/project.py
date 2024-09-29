@@ -10,8 +10,9 @@ from fastapi import APIRouter, Depends
 from app import ResponseDto
 from app.core.git import Git
 from app.curd.project.ProjectDao import ProjectDao
+from app.models.base import ResponseDto1
 from app.routers.project.project_role_schema import AddProjectRole, EditProjectRole, RoleListResDto
-from app.routers.project.project_schema import AddProject, EditProject, ProjectListResDto
+from app.routers.project.project_schema import AddProject, EditProject, ProjectListResDto, ProjectDetailDto
 from app.curd.project_role.ProjectRoleDao import ProjectRoleDao
 from app.utils.aes_utils import AesUtils
 from app.utils.auth_utils import Auth
@@ -133,3 +134,16 @@ def project_role_list(project_id: int, page: int = 1, limit: int = 10, search=No
         return RoleListResDto(data=dict(total=count, lists=roles))
     except Exception as e:
         raise NormalException(str(e))
+
+
+# @router.get("/detail", name="项目详情", response_model=ResponseDto1[ProjectDetailDto])
+# def project_detail(id: int):
+#     user = {}
+#     rsa_pub_key = None
+#     project = ProjectDao.project_detail(id, user)
+#     if project.pull_type == 1:
+#         from config import FilePath
+#         with open(FilePath.RSA_PUB_KEY, 'r', encoding='utf-8') as f:
+#             rsa_pub_key = f.read()
+#     setattr(project, 'rsa_pub_key', rsa_pub_key)
+#     return ResponseDto1(data=project)

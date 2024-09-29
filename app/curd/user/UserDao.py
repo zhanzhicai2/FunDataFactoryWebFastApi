@@ -4,7 +4,7 @@ from app.models import Session
 from sqlalchemy import or_, func, asc
 from app.models.user import DataFactoryUser
 # from app.routers.user.user_schema import LoginUserBody, UpdateUserBody, SearchUserBody
-from app.routers.user.user_schema import LoginUserBody, UpdateUserBody
+from app.routers.user.user_schema import LoginUserBody, UpdateUserBody, SearchUserBody
 from app.utils.logger import Log
 from config import Permission
 from app.utils.exception_utils import record_log, NormalException
@@ -78,6 +78,25 @@ class UserDao(object):
             user_infos = data.order_by(asc(DataFactoryUser.id)).filter(*filter_list)
             total = user_infos.count()
             return total, user_infos.limit(limit).offset((page - 1) * limit).all()
+
+    @classmethod
+    @record_log
+    def search_user(cls, data: SearchUserBody) -> DataFactoryUser:
+        """
+
+        :param cls:
+        :param data:
+        :return:
+        """
+        with Session() as session:
+            filter_list = [DataFactoryUser.is_valid == False]
+            # filter_list = [DataFactoryUser.is_valid == False]
+            user_query = session.query(DataFactoryUser)
+            filter_list.append(
+                or_(DataFactoryUser.username.like(f"%{data.keyword}%"), DataFactoryUser.name.like(f"%{data.keyword}%"),
+                    DataFactoryUser.email.like(f"%{data.keyword}%")))
+            user = user_query.filter(*filter_list)
+            return user.all()
 
     # @classmethod
     # @record_log

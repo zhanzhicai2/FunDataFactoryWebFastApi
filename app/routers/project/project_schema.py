@@ -95,3 +95,5 @@ class ProjectListResDto(ResponseDto):
 
 class ProjectDetailDto(ProjectDto):
     rsa_pub_key: Union[str, None]
+
+
