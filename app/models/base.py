@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from pydantic import BaseModel, Field
-from typing import Any, TypeVar, Generic
+from typing import Any, TypeVar, Generic, Union
 
 from pydantic.v1.generics import GenericModel
 from sqlalchemy import Column, INT, DATETIME, SMALLINT, String, func
@@ -12,7 +12,13 @@ from app.models import Base
 class ResponseDto(BaseModel):
     code: int = 200
     msg: str = '请求成功'
-    data: Any = None
+    # data: Any = None
+    data: Union[dict, list, None] = None
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
+        }
 
 
 DataT = TypeVar("DataT")
