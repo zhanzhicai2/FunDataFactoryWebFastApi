@@ -1698,3 +1698,6 @@ Exception: 对不起，你没有测试项目12项目操作权限！！！
 [2024-10-01 01:18:30.418337] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
 路径参数: page=1&limit=18
 
+[2024-10-01 19:51:02.685281] INFO: FunDataFactory: 数据工厂捕获到异常, 请求路径: /api/project/list
+路径参数: page=1&limit=9&search=%E6%B5%8B%E8%AF%95
+

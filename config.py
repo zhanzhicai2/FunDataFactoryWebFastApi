@@ -1,4 +1,5 @@
 import os
+from app.constants import constants
 
 
 # 启动配置
@@ -15,11 +16,11 @@ class Config(object):
 
     # 数据库配置
     SQLALCHEMY_DATABASE_URI: str = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
-    KEY = "funDataFactory"
-    EXPIRED_HOUR = 12  # token过期时长
-
-    AES_KEY = 'SVuRc6B7xsZnUWQO'  # AES 秘钥
-    AES_IV = 'MUnDCU0aADgs4hd1'  # AES 偏移量
+    # KEY = "funDataFactory"
+    # EXPIRED_HOUR = 12  # token过期时长
+    #
+    # AES_KEY = 'SVuRc6B7xsZnUWQO'  # AES 秘钥
+    # AES_IV = 'MUnDCU0aADgs4hd1'  # AES 偏移量
 
 
 class Text(object):
@@ -32,17 +33,18 @@ class Text(object):
 class FilePath(object):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 后端服务项目目录
 
+    LOG_FILE_PATH = os.path.join(BASE_DIR, "logs")  # 日志文件路径
+    if not os.path.isdir(LOG_FILE_PATH): os.mkdir(LOG_FILE_PATH)
+    FUN_SERVER = os.path.join(LOG_FILE_PATH, 'fun_server.log')
+
+    FUN_ERROR = os.path.join(LOG_FILE_PATH, 'fun_error.log')
+
     APP_PATH = os.path.join(BASE_DIR, "app")  # app 路径
 
     CURD_PATH = os.path.join(APP_PATH, "curd")  # dao路径
 
-    RSA_PUB_KEY = os.path.join(BASE_DIR, 'rsa_pub_key')  # 私钥
-    RSA_PRI_KEY = os.path.join(BASE_DIR, 'rsa_pri_key')
-
-    LOG_FILE_PATH = os.path.join(BASE_DIR, "logs")  # 日志文件路径
-    if not os.path.isdir(LOG_FILE_PATH): os.mkdir(LOG_FILE_PATH)
-
-    LOG_NAME = os.path.join(LOG_FILE_PATH, 'FunDataFactory.log')
+    RSA_PUB_KEY = os.path.join(BASE_DIR, 'app/commons/settings/keys/rsa_pub_key')  # 私钥
+    RSA_PRI_KEY = os.path.join(BASE_DIR, 'app/commons/settings/keys/rsa_pri_key')
 
 
 class Permission(object):
@@ -58,4 +60,40 @@ HTTP_MSG_MAP = {
     408: '请求超时',
     500: '服务器内部错误',
     302: '请求方法不支持'
+}
+API_WHITE_LIST = [
+    '/docs',
+    '/static',
+    '/favicon.ico',
+    '/openapi.json',
+    '/redoc',
+    '/api/user/register',
+    '/api/user/login'
+]
+API_ADMIN_LIST = [
+    '/api/user/update'
+]
+API_LEADER_LIST = [
+    '/api/project/insert'
+]
+# 项目日志滚动配置（日志文件超过10 MB就自动新建文件扩充）
+LOGGING_ROTATION = "10 MB"
+# 项目日志配置
+LOGGING_CONF = {
+    'server_handler': {
+        'file': FilePath.FUN_SERVER,
+        'level': 'INFO',
+        'rotation': LOGGING_ROTATION,
+        'enqueue': True,
+        'backtrace': False,
+        'diagnose': False,
+    },
+    'error_handler': {
+        'file': FilePath.FUN_ERROR,
+        'level': 'ERROR',
+        'rotation': LOGGING_ROTATION,
+        'enqueue': True,
+        'backtrace': True,
+        'diagnose': True,
+    },
 }

@@ -5,7 +5,7 @@
 # @Date  :  2024/09/10
 
 import subprocess
-from app.utils.logger import Log
+from app.commons.utils.logger import Log
 
 
 class CmdUtils(object):

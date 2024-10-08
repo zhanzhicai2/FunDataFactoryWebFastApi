@@ -5,6 +5,7 @@
 
 from pydantic import BaseModel, validator, Field, EmailStr
 from config import Config, Permission
+from app.constants import constants
 import hashlib
 from app.models.base import ToolsSchemas
 from datetime import datetime
@@ -25,7 +26,7 @@ class RegisterUserBody(BaseModel):
     @validator('password')
     def md5_paw(cls, value):
         m = hashlib.md5()
-        m.update(f"{value}key={Config.KEY}".encode("utf-8"))
+        m.update(f"{value}key={constants.TOKEN_KEY}".encode("utf-8"))
         return m.hexdigest()
 
 
@@ -40,16 +41,16 @@ class LoginUserBody(BaseModel):
     @validator('password')
     def md5_paw(cls, value):
         m = hashlib.md5()
-        m.update(f"{value}key={Config.KEY}".encode("utf-8"))
+        m.update(f"{value}key={constants.TOKEN_KEY}".encode("utf-8"))
         return m.hexdigest()
 
 
 class UpdateUserBody(BaseModel):
-    id: int = Field(..., title="用户id", description="必传")
+    username: str = Field(..., title="用户", description="必传")
     role: int = Field(None, title="用户权限", description="非必传")
     is_valid: bool = Field(None, title="是否冻结", description="非必传")
 
-    @validator('id', 'role', 'is_valid')
+    @validator('username', 'role', 'is_valid')
     def check_field(cls, v):
         return ToolsSchemas.not_empty(v)
 
@@ -98,11 +99,11 @@ class LoginResDto(ResponseDto):
 class UserList(ListDto):
     lists: List[UserDto]
 
-
-class UserListResDto(ResponseDto):
-    data: UserList
-
-    class Config:
-        json_encoders = {
-            datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
-        }
+#
+# class UserListResDto(ResponseDto):
+#     data: UserList
+#
+#     class Config:
+#         json_encoders = {
+#             datetime: lambda v: v.strftime("%Y-%m-%d %H:%M:%S")
+#         }
