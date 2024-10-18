@@ -4,7 +4,7 @@
 # @Desc : 
 # @Date  :  2024/10/05
 
-import config
+from app.commons.settings import config
 from starlette.requests import Request
 from starlette.responses import Response
 from starlette.types import ASGIApp, Scope, Receive, Send

@@ -6,7 +6,7 @@
 from sqlalchemy import Column, INT, SMALLINT
 
 from app.models.base import FunBaseModel
-from app.routers.project.project_role_schema import AddProjectRole
+from app.routers.project.request_model.project_in import AddProjectRole
 
 
 class DataFactoryProjectRole(FunBaseModel):
@@ -22,4 +22,4 @@ class DataFactoryProjectRole(FunBaseModel):
         super().__init__(create_code=user['id'], create_name=user['username'], del_flag=del_flag, id=id)
         self.user_id = form.user_id
         self.project_id = form.project_id
-        self.project_role = form.project_role
+        self.project_role = form.project_role.value

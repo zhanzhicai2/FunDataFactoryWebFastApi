@@ -4,7 +4,7 @@
 # @Desc : 
 # @Date  :  2024/10/05
 
-from app.commons.response.response_code import CodeEnum
+from app.commons.responses.response_code import CodeEnum
 
 
 class BusinessException(Exception):

@@ -1,7 +1,8 @@
 from datetime import datetime
 from sqlalchemy import Column, String, INT, DATETIME, SMALLINT, func, Boolean
 from app.models import Base
-from config import Permission
+from app.constants.enums import PermissionEnum
+from app.routers.user.request_model.user_in import RegisterUserBody
 
 
 class DataFactoryUser(Base):
@@ -16,16 +17,16 @@ class DataFactoryUser(Base):
     last_login_time = Column(DATETIME, nullable=True, comment="上次登录时间")
     is_valid = Column(Boolean, nullable=False, default=False, comment="是否冻结")
     create_time = Column(DATETIME, nullable=False, comment="创建时间")
-    update_code = Column(String(20), nullable=True, comment="更新人编码")
+    update_id = Column(String(20), nullable=True, comment="更新人编码id")
     update_name = Column(String(20), nullable=True, comment="更新人")
     update_time = Column(DATETIME, onupdate=func.now(), nullable=False, comment="更新时间")
 
-    def __init__(self, username, name, password, email):
-        self.username = username
-        self.name = name
-        self.password = password
-        self.email = email
-        self.role = Permission.MEMBERS
+    def __init__(self, form: RegisterUserBody):
+        self.username = form.username
+        self.name = form.name
+        self.password = form.password
+        self.email = form.email
+        self.role = PermissionEnum.members.value()
         self.is_valid = False
         self.create_time = datetime.now()
         self.update_time = datetime.now()

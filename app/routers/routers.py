@@ -1,5 +1,4 @@
-from app.routers.project import project
-from app.routers.user import user
+from app.routers import user, project
 
 data = [
     (user.router, '/api/user', ["用户模块"]),

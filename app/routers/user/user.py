@@ -1,9 +1,9 @@
 import json
 
 from fastapi import APIRouter
-from app.routers.user.user_schema import RegisterUserBody, LoginUserBody, UserTokenDto, UserDto, UpdateUserBody, \
+from app.routers.user.request_model.user_in import RegisterUserBody, LoginUserBody, UserTokenDto, UserDto, UpdateUserBody, \
     SearchUserBody
-from app.curd.user.UserDao import UserDao
+from app.crud.user.UserDao import UserDao
 from app.models.base import ResponseDto, ListResponseDto, list_object_exclude
 from app.commons.utils.jwt_utils import UserToken
 from typing import List

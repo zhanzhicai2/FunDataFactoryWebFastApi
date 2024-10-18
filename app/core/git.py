@@ -4,14 +4,13 @@
 # @Desc : 
 # @Date  :  2024/09/10
 
-from config import FilePath
-from app.commons.utils.logger import Log
+from app.commons.settings.config import FilePath
 from app.commons.utils.cmd_utils import CmdUtils
 from urllib.parse import quote
+from loguru import logger
 
 
 class Git(object):
-    log = Log("git")
 
     @staticmethod
     def git_url(url, user, pwd):
@@ -29,11 +28,11 @@ class Git(object):
         :param password: git密码
         :return:
         """
-        Git.log.info("开始克隆, 方式为http")
+        logger.info("http开始克隆, 方式为http")
         command_str = f"cd {FilePath.BASE_DIR}\n" \
                       f"git clone -b {git_branch} {Git.git_url(git_url, user, password)}\n"
         CmdUtils.cmd(command_str)
-        Git.log.info("克隆结束")
+        logger.info("http克隆结束")
 
     @staticmethod
     def git_clone_ssh(git_branch, git_url):
@@ -43,11 +42,11 @@ class Git(object):
         :param git_url: 代码地址
         :return:
         """
-        Git.log.info("ssh克隆开始")
+        logger.info("ssh克隆开始")
         command_str = f"cd {FilePath.BASE_DIR}\n" \
                       f'git clone -b {git_branch} {git_url} --config core.sshCommand="ssh -i {FilePath.RSA_PRI_KEY}"\n'
         CmdUtils.cmd(command_str)
-        Git.log.info("ssh克隆结束")
+        logger.info("ssh克隆结束")
 
     @staticmethod
     def git_pull(project_path: str, git_branch: str) -> None:

@@ -5,7 +5,7 @@
 # @Date  :  2024/09/10
 
 import paramiko
-from config import FilePath
+from app.commons.settings.config import FilePath
 
 
 def generate_ssh_key():
