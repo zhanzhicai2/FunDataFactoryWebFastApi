@@ -42,7 +42,7 @@ class LoginUserBody(BaseBody):
 
 
 class UpdateUserBody(BaseBody):
-    username: str = Field(..., title="用户", description="必传")
+    id: int = Field(..., title="用户id", description="必传")
     role: PermissionEnum = Field(None, title="用户权限", description="非必传")
     is_valid: bool = Field(None, title="是否冻结", description="非必传")
 

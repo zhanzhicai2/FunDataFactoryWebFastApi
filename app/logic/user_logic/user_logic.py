@@ -13,7 +13,7 @@ from app.commons.utils.context_utils import REQUEST_CONTEXT
 
 
 def user_register_logic(body: RegisterUserBody):
-    UserDto.register_user(body)
+    UserDao.register_user(body)
 
 
 def user_login_logic(body: LoginUserBody):
