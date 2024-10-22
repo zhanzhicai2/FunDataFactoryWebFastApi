@@ -69,5 +69,5 @@ def project_detail(id:None):
 
 
 def sync_project(id: int):
-    data = project_logic.sync_project_logic(id)
-    return ResponseDto(data = data)
+    msg = project_logic.sync_project_logic(id)
+    return ResponseDto(msg = msg)
