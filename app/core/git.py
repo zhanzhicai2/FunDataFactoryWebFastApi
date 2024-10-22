@@ -56,7 +56,12 @@ class Git(object):
         :param git_branch:
         :return:
         """
-        # logger.info
+        logger.info("拉取项目代码开始")
+        command_str = f"cd {project_path}\n" \
+                      f"git fetch --all\n" \
+                      f"git reset --hard origin/{git_branch}\n"
+        CmdUtils.cmd(command_str)
+        logger.info("拉取项目代码结束")
 
 
 # if __name__ == '__main__':

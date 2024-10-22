@@ -8,12 +8,16 @@ from datetime import datetime
 from typing import Union
 
 
-class ProjectDto(BaseDto):
+class ProjectListDto(BaseDto):
     id: int
     project_name: str
     description: str = None
-    directory: str
     owner: str
+    update_time: datetime
+
+
+class ProjectDetailDto(ProjectListDto):
+    directory: str
     private: bool
     pull_type: int
     git_project: str
@@ -21,16 +25,6 @@ class ProjectDto(BaseDto):
     git_branch: str
     git_account: str = None
     git_password: str = None
-    create_time: datetime
-    update_time: datetime
-    del_flag: int
-    create_id: int
-    create_name: str
-    update_id: int = None
-    update_name: str = None
-
-
-class ProjectDetailDto(ProjectDto):
     rsa_pub_key: Union[str, None]
 
 

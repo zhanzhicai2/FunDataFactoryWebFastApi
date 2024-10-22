@@ -14,6 +14,13 @@ from app.commons.utils.aes_utils import AesUtils
 from app.commons.utils.context_utils import REQUEST_CONTEXT
 from app.constants.enums import PullTypeEnum
 from app.commons.exceptions.global_exception import BusinessException
+from app.core.get_project_path import ProjectPath
+from app.core.api_doc_parse import ApiDocParse
+from app.commons.utils.cmd_utils import CmdUtils
+from starlette.requests import Request
+
+
+# from app.const import constants
 
 
 def insert_project_logic(body: AddProject):
@@ -28,8 +35,11 @@ def update_project_logic(body: EditProject):
 
 def delete_project_logic(id: int):
     user = REQUEST_CONTEXT.get().user
-    # todo: 暂时用不到，用_占坑，后续加入后置操作
-    _ = ProjectDao.delete_project(id, user)
+    project = ProjectDao.delete_project(id, user)
+    import os
+    project_path = os.path.join(FilePath.BASE_DIR, project.git_project)
+    if os.path.isdir(project_path):
+        CmdUtils.cmd(f"rm -rf {project_path}")
 
 
 def get_project_lists_logic(page: int = 1, limit: int = 10, search=None):
@@ -54,7 +64,7 @@ def delete_project_role_logic(id: int):
     ProjectRoleDao.delete_project_role(id, user)
 
 
-def project_role_list_logic(project_id: int, page: int = 1, limit: int = 10, search=None):
+def project_role_list_logic(project_id=None, page: int = 1, limit: int = 10, search=None):
     user = REQUEST_CONTEXT.get().user
     roles, count = ProjectRoleDao.project_role_list(user, project_id, page, limit, search)
     project_role_list = dict(total=count, lists=roles)
@@ -71,7 +81,7 @@ def operation_project_logic(id: int):
     ProjectRoleDao.operation_permission(id, user)
 
 
-def init_project(id: int):
+def init_project_logic(id: int):
     user = REQUEST_CONTEXT.get().user
     project = ProjectDao.project_detail(id, user)
     project_path = os.path.join(FilePath.BASE_DIR, project.git_project)
@@ -85,7 +95,7 @@ def init_project(id: int):
         Git.git_clone_ssh(project.git_branch, project.git_url)
 
 
-def project_detail_logic(id: int):
+def project_detail_logic(id: None):
     user = REQUEST_CONTEXT.get().user
     rsa_pub_key = None
     project = ProjectDao.project_detail(id, user)
@@ -95,3 +105,18 @@ def project_detail_logic(id: int):
             rsa_pub_key = f.read()
     setattr(project, 'rsa_pub_key', rsa_pub_key)
     return project
+
+
+def sync_project_logic(id: int):
+    # 记录是谁同步脚本，顺便判断一下权限
+    user = REQUEST_CONTEXT.get().user
+    project = ProjectDao.project_detail(id, user)
+    # step1 git pull 更新项目
+    project_path, script_path = ProjectPath.get(project.git_project, project.directory)
+    Git.git_pull(project_path, project.git_branch)
+    api_doc = ApiDocParse(project_path, script_path)
+    # step2 执行api_doc命令, 生成api_data.json
+    api_doc.exec()
+    # step3 解析apidoc数据入库，暂时先返回api_data.json数据
+    api_data = api_doc.parse_apidoc()
+    return api_data

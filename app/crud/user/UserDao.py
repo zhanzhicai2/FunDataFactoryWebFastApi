@@ -2,6 +2,7 @@ from sqlalchemy import or_
 from app.models.user import DataFactoryUser
 from app.constants.enums import PermissionEnum
 from app.routers.user.request_model.user_in import LoginUserBody, UpdateUserBody, SearchUserBody, RegisterUserBody
+from app.routers.user.response_model.user_out import SearchUserDto, UserDto
 from datetime import datetime
 from app.commons.exceptions.global_exception import BusinessException
 from app.crud import BaseCrud
@@ -50,16 +51,17 @@ class UserDao(BaseCrud):
     @classmethod
     def get_user_infos(cls, page: int = 1, limit: int = 10, search: str = None) -> (int, DataFactoryUser):
         """
-                :param page: 页码
-                :param limit: 多少条一页
-                :param search: 搜索内容
-                :return:
-                """
+        :param page: 页码
+        :param limit: 多少条一页
+        :param search: 搜索内容
+        :return:
+        """
         # like 比较特殊，必须f"%{search}%" if search else None
-        total, user_info = cls.get_with_params(page=page, limit=limit,
-                                               _sort=[DataFactoryUser.id.desc()],
-                                               username=f"%{search}%" if search else None)
-        return total, user_info
+        total, user_infos = cls.get_with_pagination(page=page, limit=limit,
+                                                    _sort=[DataFactoryUser.id.desc()],
+                                                    _fields=UserDto,
+                                                    username=f"%{search}%" if search else None)
+        return total, user_infos
 
     @classmethod
     def search_user(cls, body: SearchUserBody) -> DataFactoryUser:
@@ -72,7 +74,7 @@ class UserDao(BaseCrud):
         filter_list = [or_(DataFactoryUser.username.like(f"%{body.keyword}%"),
                            DataFactoryUser.name.like(f"%{body.keyword}%"),
                            DataFactoryUser.email.like(f"%{body.keyword}%"))]
-        user = cls.get_with_params(filter_list=filter_list, is_valid=False)
+        user = cls.get_with_params(filter_list=filter_list, _fields=SearchUserDto, is_valid=False)
         return user
 
     @classmethod

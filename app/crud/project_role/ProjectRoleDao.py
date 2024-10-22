@@ -67,9 +67,10 @@ class ProjectRoleDao(BaseCrud):
         cls.delete_by_id(id=id)
 
     @classmethod
-    def project_role_list(cls, project_id: int, page=1, limit=10, search=None):
+    def project_role_list(cls, user: dict, project_id=None, page=1, limit=10, search=None):
         """
         获取项目权限成员列表
+        :param user:
         :param project_id: 项目id
         :param page: 页码
         :param limit: 大小
@@ -80,17 +81,16 @@ class ProjectRoleDao(BaseCrud):
             cls.operation_permission(project_id, user)
             filter_list = [DataFactoryProjectRole.del_flag == 0, DataFactoryProjectRole.project_id == project_id]
             if search:
-                filter_list.append(
-                    or_(DataFactoryUser.username.like(f"%{search}%"), DataFactoryUser.email.like(f"%{search}%")))
+                filter_list.append(or_(DataFactoryUser.username.like(f"%{search}%"),
+                                       DataFactoryUser.email.like(f"%{search}%")))
             roles = session.query(DataFactoryUser.name, DataFactoryUser.username, DataFactoryUser.email,
                                   DataFactoryProjectRole.user_id,
                                   DataFactoryProjectRole.project_role, DataFactoryProjectRole.project_id,
                                   DataFactoryProjectRole.id, DataFactoryProjectRole.create_name,
-                                  DataFactoryProjectRole.create_time). \
+                                  DataFactoryProjectRole.create_time).\
                 outerjoin(DataFactoryProjectRole, DataFactoryProjectRole.user_id == DataFactoryUser.id)
             roles = roles.filter(*filter_list)
-            role_infos = roles.order_by(desc(DataFactoryProjectRole.create_time)).limit(limit).offset(
-                (page - 1) * limit).all()
+            role_infos = roles.order_by(desc(DataFactoryProjectRole.create_time)).limit(limit).offset((page - 1) * limit).all()
             count = roles.count()
             return role_infos, count
 

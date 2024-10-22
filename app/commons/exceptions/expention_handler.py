@@ -1,11 +1,9 @@
-# encoding: utf-8
-# @File  : expention_handler.py
-# @Author: zhanzhicai
-# @Desc : 
-# @Date  :  2024/10/04
+# -*- coding: utf-8 -*-
+# @Time : 2022/7/21 07:14
+# @Author : junjie
+# @File : expention_handler.py
 
 from fastapi import Request
-
 from app.commons.settings.config import HTTP_MSG_MAP
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.exceptions import RequestValidationError
@@ -14,7 +12,6 @@ from fastapi.responses import JSONResponse
 from app.commons.exceptions.global_exception import BusinessException, AuthException, PermissionException
 from pydantic import ValidationError
 from app.commons.responses.response_code import CodeEnum
-
 from loguru import logger
 
 
@@ -24,7 +21,7 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     return JSONResponse(content=res.dict())
 
 
-# 自定义参数校验异常处理器  请求参数校验异常处理器
+# 请求参数校验异常处理器
 async def body_validation_exception_handler(request: Request, err: RequestValidationError):
     message = ""
     data = {}
@@ -32,10 +29,10 @@ async def body_validation_exception_handler(request: Request, err: RequestValida
         if isinstance(raw_error.exc, ValidationError):
             exc = raw_error.exc
             if hasattr(exc, 'model'):
-                fields = exc.model.__dict__.get('__fields')
+                fields = exc.model.__dict__.get('__fields__')
                 for field_key in fields.keys():
                     data[field_key] = fields.get(field_key).field_info.title
-            for error in err.errors():
+            for error in exc.errors():
                 field = str(error.get('loc')[-1])
                 _msg = error.get("msg")
                 message += f"{data.get(field, field)}{_msg},"
@@ -52,19 +49,20 @@ async def business_exception_handler(request: Request, exc: BusinessException):
 # 权限异常处理器
 async def role_exception_handler(request: Request, exc: PermissionException):
     res = ResponseDto(code=exc.code, msg=exc.msg)
-    return JSONResponse(content=res.dict)
+    return JSONResponse(content=res.dict())
 
 
 # 用户登录态异常处理处理器
 async def auth_exception_handler(request: Request, exc: AuthException):
     res = ResponseDto(code=exc.code, msg=exc.msg)
-    return JSONResponse(content=res.dict)
+    return JSONResponse(content=res.dict())
 
 
 # todo 返回参数异常处理处理器
 # async def res_validation_exception_handler(request: Request, exc: ValidationError):
 #     res = ResponseDto(code=111, msg='demo')
 #     return JSONResponse(content=res.dict())
+
 # 全局系统异常处理器(中间件的异常都归类到这里来，统一处理)
 async def global_exception_handler(request: Request, exc: Exception):
     if isinstance(exc, PermissionException):
@@ -72,7 +70,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     elif isinstance(exc, AuthException):
         return await auth_exception_handler(request, exc)
     # elif isinstance(exc, ValidationError):
-        # return await res_validation_exception_handler(request, exc)
+    #     return await res_validation_exception_handler(request, exc)
     else:
         import traceback
         logger.exception(traceback.format_exc())

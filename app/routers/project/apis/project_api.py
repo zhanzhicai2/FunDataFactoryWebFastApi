@@ -43,7 +43,7 @@ def delete_project_role(id: int):
     return ResponseDto(msg="删除成功")
 
 
-def project_role_list(project_id: int, page: int = 1, limit: int = 10, search=None):
+def project_role_list(project_id=None, page: int = 1, limit: int = 10, search=None):
     project_role_list = project_logic.project_role_list_logic(project_id, page, limit, search)
     return ListResponseDto(data=project_role_list)
 
@@ -59,10 +59,15 @@ def operation_project(id: int):
 
 
 def init_project(id: int):
-    project_logic.init_project(id)
+    project_logic.init_project_logic(id)
     return ResponseDto(msg="初始化成功")
 
 
-def project_detail(id: int):
+def project_detail(id:None):
     project = project_logic.project_detail_logic(id)
     return ResponseDto(data=project)
+
+
+def sync_project(id: int):
+    data = project_logic.sync_project_logic(id)
+    return ResponseDto(data = data)

@@ -1,8 +1,7 @@
-# encoding: utf-8
-# @File  : middlewares.py
-# @Author: zhanzhicai
-# @Desc : 
-# @Date  :  2024/10/05
+# -*- coding: utf-8 -*-
+# @Time : 2022/7/20 14:27
+# @Author : junjie
+# @File : middlewares.py
 
 from app.commons.settings import config
 from starlette.requests import Request
@@ -16,14 +15,13 @@ from app.commons.exceptions.expention_handler import global_exception_handler
 class BaseMiddleware(object):
     """中间件基类"""
 
-    def __init__(self, app: ASGIApp):
+    def __init__(self, app: ASGIApp) -> None:
         self.app = app
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] != "http":
             await self.app(scope, receive, send)
             return
-
         request = Request(scope, receive=receive)
         response = await self.before_request(request) or self.app
         await response(request.scope, request.receive, send)
