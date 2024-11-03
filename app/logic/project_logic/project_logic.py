@@ -5,9 +5,9 @@
 # @Date  :  2024/10/13
 
 import os
-from app.crud.project.ProjectDao import ProjectDao
+from concurrent.futures import ThreadPoolExecutor, ALL_COMPLETED, wait
+from app.crud.project.ProjectDao import ProjectDao, DataFactoryProject
 from app.crud.project_role.ProjectRoleDao import ProjectRoleDao
-from app.crud.case.CaseDao import CaseDao
 from app.routers.project.request_model.project_in import AddProject, EditProject, AddProjectRole, EditProjectRole
 from app.commons.settings.config import FilePath
 from app.core.git import Git
@@ -68,7 +68,7 @@ def delete_project_role_logic(id: int):
 def project_role_list_logic(project_id=None, page: int = 1, limit: int = 10, search=None):
     user = REQUEST_CONTEXT.get().user
     roles, count = ProjectRoleDao.project_role_list(user, project_id, page, limit, search)
-    project_role_list = dict(total=count, lists=roles)
+    project_role_list = dict(count=count, lists=roles)
     return project_role_list
 
 
@@ -88,6 +88,10 @@ def init_project_logic(id: int):
     project_path = os.path.join(FilePath.BASE_DIR, project.git_project)
     if os.path.isdir(project_path):
         raise BusinessException("项目已存在, 请执行刷新项目！")
+    init_project(project)
+
+
+def init_project(project: DataFactoryProject):
     # 拉取项目
     if project.pull_type == PullTypeEnum.http.value:
         Git.git_clone_http(project.git_branch, project.git_url, project.git_account,
@@ -108,7 +112,20 @@ def project_detail_logic(id: None):
     return project
 
 
+def start_init_project_logic():
+    pass
+    # projects = ProjectDao.get_with_params()
+    # with ThreadPoolExecutor(max_workers=len(projects)) as ts:
+    #     all_task = []
+    #     for project in projects:
+    #         all_task.append(ts.submit(init_project, project))
+    #     wait(all_task, return_when=ALL_COMPLETED)
+
+
+# todo git webhook同步项目
+
 def sync_project_logic(id: int):
+    from app.crud.case.CaseDao import CaseDao
     # 记录是谁同步脚本，顺便判断一下权限
     user = REQUEST_CONTEXT.get().user
     project = ProjectDao.project_detail(id, user)
@@ -130,3 +147,9 @@ def sync_project_logic(id: int):
     # step6 处理同步消息
     msg = api_doc.sync_msg(**msg_dict)
     return msg
+
+
+def sync_project_list_logic():
+    user = REQUEST_CONTEXT.get().user
+    project = ProjectDao.get_user_all_projects(user)
+    return project

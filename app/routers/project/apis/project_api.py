@@ -63,11 +63,16 @@ def init_project(id: int):
     return ResponseDto(msg="初始化成功")
 
 
-def project_detail(id:None):
+def project_detail(id: None):
     project = project_logic.project_detail_logic(id)
     return ResponseDto(data=project)
 
 
 def sync_project(id: int):
     msg = project_logic.sync_project_logic(id)
-    return ResponseDto(msg = msg)
+    return ResponseDto(msg=msg)
+
+
+def sync_project_list():
+    project = project_logic.sync_project_list_logic()
+    return ResponseDto(data=project)

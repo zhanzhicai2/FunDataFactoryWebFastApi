@@ -8,6 +8,11 @@ from datetime import datetime
 from typing import Union
 
 
+class ProjectSyncDto(BaseDto):
+    id: int
+    project_name: str
+
+
 class ProjectListDto(BaseDto):
     id: int
     project_name: str
@@ -40,20 +45,6 @@ class RoleDto(BaseDto):
     create_time: datetime
 
 
-class CaseDto(BaseDto):
-    id: int
-    title: str = None
-    name: str = None
-    description: str = None
-    group_name: str = None
-    header: str = None
-    owner: str = None
-    path: str = None
-    param_in: str = None
-    param_out: str = None
-    example_param_in: str = None
-    example_param_out: str = None
 
 
-class CaseListDto(BaseDto):
-    data: CaseDto
+

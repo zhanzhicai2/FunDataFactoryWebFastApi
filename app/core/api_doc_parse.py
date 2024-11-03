@@ -10,7 +10,6 @@ import json
 from loguru import logger
 from app.commons.utils.cmd_utils import CmdUtils
 from app.commons.exceptions.global_exception import BusinessException
-from app.crud.case.CaseDao import CaseDto
 
 
 # 捕获异常装饰器
@@ -285,6 +284,7 @@ class ApiDocParse(object):
         :param user: 用户数据
         :return:
         """
+        from app.crud.case.CaseDao import CaseDao
         update_list = []
         add_list = []
         delete_list = []
@@ -322,13 +322,16 @@ class ApiDocParse(object):
                 delete_list.append(case['title'])
         return dict(add=add_list, update=update_list, delete=delete_list)
 
-    # if __name__ == '__main__':
-    #     from app.core.get_project_path import ProjectPath
-    #
-    #     project_path, cases_path = ProjectPath.get('funcase', 'case')
-    #     apidoc = ApiDocParse(project_path, cases_path)
-    #     data = apidoc.parse_apidoc()
-    #     print(json.dumps(data, ensure_ascii=False))
+
+# if __name__ == '__main__':
+#     from app.core.get_project_path import ProjectPath
+#
+#     project_path, cases_path = ProjectPath.get('funcase', 'case')
+#     apidoc = ApiDocParse(project_path, cases_path)
+#     data = apidoc.parse_apidoc()
+#     print(json.dumps(data, ensure_ascii=False))
+
+
     @exception_log
     def sync_msg(self, add: list, update: list, delete: list) -> str:
         """
