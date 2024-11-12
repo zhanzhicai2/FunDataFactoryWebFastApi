@@ -30,3 +30,9 @@ ERROR_MSG_TEMPLATES = {
     "type_error.str": "必须为str类型",
     "type_error.enum": "类型有误"
 }
+
+
+USER_AGENT = 'git-oschina-hook'
+
+# 需要修改
+SECRET = 'fangjunjie1996'

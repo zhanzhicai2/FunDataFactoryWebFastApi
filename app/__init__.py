@@ -57,8 +57,8 @@ async def request_info(request: Request):
 
 
 async def register_routers(_app: FastAPI):
-    for item in routers.data:
-        _app.include_router(item[0], prefix=item[1], tags=item[2],
+    for router in routers.data_:
+        _app.include_router(router.module, prefix=router.prefix, tags=router.tags,
                             dependencies=[Depends(request_context), Depends(request_info)])
 
 

@@ -78,3 +78,8 @@ router.add_api_route("/all",
                      methods=["get"],
                      name="获取用户所有有效项目",
                      response_model=ResponseDto[List[ProjectSyncDto]])
+router.add_api_route("/gitSync",
+                     project_api.sync_project_by_git,
+                     methods=["post"],
+                     name="git同步项目",
+                     response_model=ResponseDto)

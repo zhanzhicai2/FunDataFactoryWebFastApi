@@ -2,7 +2,6 @@
 # @Time : 2022/7/21 07:14
 # @Author : junjie
 # @File : expention_handler.py
-
 from fastapi import Request
 from app.commons.settings.config import HTTP_MSG_MAP
 from starlette.exceptions import HTTPException as StarletteHTTPException
@@ -13,6 +12,7 @@ from app.commons.exceptions.global_exception import BusinessException, AuthExcep
 from pydantic import ValidationError
 from app.commons.responses.response_code import CodeEnum
 from loguru import logger
+import json
 
 
 # 自定义http异常处理器
@@ -36,6 +36,8 @@ async def body_validation_exception_handler(request: Request, err: RequestValida
                 field = str(error.get('loc')[-1])
                 _msg = error.get("msg")
                 message += f"{data.get(field, field)}{_msg},"
+        elif isinstance(raw_error.exc, json.JSONDecodeError):
+            message += 'json解析失败! '
     res = ResponseDto(code=CodeEnum.PARAMS_ERROR.code, msg=f"请求参数非法!{message[:-1]}")
     return JSONResponse(content=res.dict())
 

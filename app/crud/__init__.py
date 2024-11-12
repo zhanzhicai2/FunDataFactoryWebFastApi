@@ -46,7 +46,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def get_with_params(cls, session=Session(), *, filter_list: list = None,
+    def get_with_params(cls, session: Session, *, filter_list: list = None,
                         _sort: list = None, _fields: Type[BaseDto] = None, _group: list = None, **kwargs):
         """
         查询数据
@@ -62,7 +62,7 @@ class BaseCrud(object):
         return query_obj.all()
 
     @classmethod
-    def query_wrapper(cls, session=Session(), filter_list: list = None,
+    def query_wrapper(cls, session: Session, filter_list: list = None,
                       _sort: list = None, _fields: Type[BaseDto] = None, _group: list = None, **kwargs):
         """
         查询数据
@@ -120,7 +120,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def get_with_pagination(cls, session: Session(), *, page: int = 1, limit: int = 10, **kwargs):
+    def get_with_pagination(cls, session: Session, *, page: int = 1, limit: int = 10, **kwargs):
         """
         分页查询
         :param session: 会话
@@ -135,7 +135,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def get_with_existed(cls, session: Session(), *, filter_list: list = None, **kwargs):
+    def get_with_existed(cls, session: Session, *, filter_list: list = None, **kwargs):
         """
         判断数据是否存在
         :param session: 会话
@@ -151,7 +151,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def get_with_first(cls, session: Session(), **kwargs):
+    def get_with_first(cls, session: Session, **kwargs):
         """
         获取第一条数据
         :param session: 会话
@@ -163,7 +163,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def get_with_id(cls, session: Session(), *, id: int):
+    def get_with_id(cls, session: Session, *, id: int):
         """
         根据主键id查询数据
         :param session: 会话
@@ -175,7 +175,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def update_by_id(cls, session: Session(), *, model: Union[dict, BaseBody], user: dict = None, not_null=False,
+    def update_by_id(cls, session: Session, *, model: Union[dict, BaseBody], user: dict = None, not_null=False,
                      **kwargs):
         """
         通过主键id更新数据
@@ -215,7 +215,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def update_by_map(cls, session: Session(), *, filter_list: list, user: dict = None, **kwargs):
+    def update_by_map(cls, session: Session, *, filter_list: list, user: dict = None, **kwargs):
         """
         批量更新数据
         :param session: 会话
@@ -231,11 +231,11 @@ class BaseCrud(object):
         query_obj = session.query(cls.model).filter(*filter_list)
         query_obj.update(kwargs)
         session.commit()
-        return query_obj.all() if len(query_obj.all()) > 1 else query_obj.first()
+        return query_obj.all()
 
     @classmethod
     @connect
-    def insert_by_model(cls, session: Session(), *, model_obj: FunBaseModel):
+    def insert_by_model(cls, session: Session, *, model_obj: FunBaseModel):
         """
         :param session: 会话
         :param model_obj: 实例化的对象
@@ -248,7 +248,7 @@ class BaseCrud(object):
 
     @classmethod
     @connect
-    def delete_by_id(cls, session: Session(), *, id: int, user: dict = None, **kwargs):
+    def delete_by_id(cls, session: Session, *, id: int, user: dict = None, **kwargs):
         """
         通过主键id删除数据
         :param session: 会话

@@ -5,6 +5,7 @@
 # @Date  :  2024/10/05
 
 from app.commons.responses.response_code import CodeEnum
+from typing import Any
 
 
 class BusinessException(Exception):
@@ -17,6 +18,7 @@ class BusinessException(Exception):
         """
         self.code = CodeEnum.BUSINESS_ERROR.code
         self.msg = msg
+        self.data = data
 
 
 class AuthException(BusinessException):

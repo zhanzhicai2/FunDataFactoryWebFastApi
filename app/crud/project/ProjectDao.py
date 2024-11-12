@@ -71,7 +71,13 @@ class ProjectDao(BaseCrud):
         :return:
         """
         ProjectRoleDao.operation_permission(id, user)
-        cls.delete_by_id(id=id, user=user)
+        # cls.delete_by_id(id=id, user=user)
+        with Session() as session:
+            from app.crud.case.CaseDao import CaseDao, CaseParamsDao
+            project = cls.delete_by_id(session, id=id, user=user)
+            cases_id_list = CaseDao.delete_project_case(session, project.id, user)
+            CaseParamsDao.delete_all_params(session, cases_id_list, user)
+            return project
 
     @classmethod
     def list_project(cls, user: dict, page: int = 1, limit: int = 10, search: str = None) -> (int, DataFactoryProject):
@@ -128,3 +134,17 @@ class ProjectDao(BaseCrud):
         if project is None:
             raise BusinessException("项目不存在")
         return project
+
+    @classmethod
+    def project_detail_by_git(cls, name: str):
+        """获取项目详情"""
+        project = cls.get_with_first(git_project=name)
+        if project is None:
+            raise Exception("项目不存在")
+        return project
+
+    @classmethod
+    def project_summary(cls):
+        """统计项目数量"""
+        project_sum = cls.get_with_count()
+        return project_sum
